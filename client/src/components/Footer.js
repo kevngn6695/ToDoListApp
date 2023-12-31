@@ -1,4 +1,4 @@
-import "../media/css/footer.css";
+import "../assets/style/css/footer.css";
 
 function Footer({ className, children }) {
   return <footer className={className}>{children}</footer>;
