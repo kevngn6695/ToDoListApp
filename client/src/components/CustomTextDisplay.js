@@ -1,7 +1,11 @@
-import "../assets/style/css/customtextdisplay.css";
+import "../assets/style/css/components/customtextdisplay.css";
 
 function CustomTextDisplay({ className, children }) {
-  return <ul className={className}>{children}</ul>;
+  return (
+    <div className={className}>
+      <ul>{children}</ul>
+    </div>
+  );
 }
 
 export default CustomTextDisplay;

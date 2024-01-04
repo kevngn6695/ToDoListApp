@@ -1,4 +1,4 @@
-import "../assets/style/css/customlistitem.css";
+import "../assets/style/css/components/customlistitem.css";
 
 function CustomListItem({ className }) {
   return <li className={className}>CustomListItem</li>;

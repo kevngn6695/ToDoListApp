@@ -1,4 +1,4 @@
-import "../assets/style/css/body.css";
+import "../assets/style/css/main/body.css";
 
 function Body({ className, children }) {
   return <body className={className}>{children}</body>;

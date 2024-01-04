@@ -1,4 +1,4 @@
-import "./assets/style/css/app.css";
+import "./assets/style/css/main/app.css";
 
 import Header from "./components/Header.js";
 import Body from "./components/Body.js";
@@ -16,11 +16,13 @@ function App() {
   };
   // Initialize text heading props
   const customTextHeadingProps = {
-    className: "to-do-text-header",
+    className: "to-do-text-header-container",
+    children: "To Do List",
   };
   // Initialize text input props
   const customTextInputProps = {
-    className: "to-do-text-input",
+    className: "to-do-text-input-container",
+    type: "text",
   };
   // Initialize text display props
   const customTextDisplayProps = {

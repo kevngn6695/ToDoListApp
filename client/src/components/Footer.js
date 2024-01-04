@@ -1,11 +1,13 @@
-import "../assets/style/css/footer.css";
+import "../assets/style/css/main/footer.css";
 
 function Footer({ className }) {
   const date = new Date();
   const currentYear = date.getFullYear();
   return (
-    <footer className={className}>
-      Copyright &copy; 2020-{currentYear}. All Rights Reserved.
+    <footer>
+      <p className={className}>
+        Copyright &copy; 2020-{currentYear}. All Rights Reserved.
+      </p>
     </footer>
   );
 }
