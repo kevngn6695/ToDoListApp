@@ -1,11 +1,11 @@
 import "../assets/style/css/components/customtextheading.css";
 
-function CustomHeader({ className, children }) {
+function CustomTextHeading(props) {
   return (
-    <div className={className}>
-      <h1>{children}</h1>
+    <div className={props.className}>
+      <h1>{props.dateName}</h1>
     </div>
   );
 }
 
-export default CustomHeader;
+export default CustomTextHeading;

@@ -1,17 +1,15 @@
-@import url(../fonts/fonts.css);
+@import url('../fonts/fonts.css');
 
 footer{
-    padding: 0;
-    margin: 10px 0;
-    position: absolute;
+    padding: 10px 0;
+    margin: 0;
     width: 100%;
+    position: absolute;
     bottom: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
-p{
+.to-do-footer-paragraph{
+    text-align: center;
+    font-family: "Custom_Poppins";
     font-size: 12px;
-    font-family: "Custom_Gelion";
 }
