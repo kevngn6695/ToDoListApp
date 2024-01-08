@@ -1,6 +1,6 @@
 import "../assets/style/css/components/custommaincontainer.css";
 function CustomMainContainer(props) {
-  return <div className={props.className}>{props.children}</div>;
+  return <section className={props.className}>{props.children}</section>;
 }
 
 export default CustomMainContainer;

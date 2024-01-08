@@ -1,9 +1,17 @@
 @import url('../fonts/fonts.css');
 
-.to-do-text-heading{
+.to-do-main-text-heading, .to-do-menu-text-heading{
     position: absolute;
-    left: 25%;
+}
+.to-do-main-text-heading{
+    left: 24.5%;
     top: 2.5%;
+    font-size: 35px;
+}
+.to-do-menu-text-heading{
+    left: 5%;
+    top: 2.5%;
+    font-size: 20px;
 }
 
 h1{

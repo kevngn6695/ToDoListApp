@@ -1,27 +1,24 @@
 @import url('../fonts/fonts.css');
-.to-do-text-input, .to-do-text-input-form{
+
+.to-do-main-text-input, .to-do-main-text-input-form{
     position: absolute;
     top: 20%;
     left: 35.5%;
     transform: translate(-35.5%, -50%);
 }
 
-.to-do-text-input-form{
+.to-do-main-text-input-form{
     width: 30%;
     min-height: 4rem;
 }
-.to-do-text-input{
+
+.to-do-main-text-input{
     width: 100%;
     padding: 5px 0px 5px 10px;
-    font-size: 12px;
-    border-radius: 5px;
-
-}
-
-input[type="text"], input[type="text"]:focus{
     font-size: 12px;
     font-family: "Custom_Gelion";
     border: 1px solid rgba(189, 195, 199, 0.8);
     outline: medium;
     position: absolute;
+    border-radius: 5px;
 }

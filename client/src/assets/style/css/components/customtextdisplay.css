@@ -1,22 +1,2 @@
 @import url('../fonts/fonts.css');
 
-.to-do-text-display-container{
-    width: 30%;
-    padding: 10px;
-    min-height: 300px;
-    position: absolute;
-    top: 55%;
-    left: 35%;
-    transform: translate(-35%, -50%);
-}
-
-button{
-    width: 100%;
-    min-height: 20px;
-    margin: 2px 0px;
-    background-color: white;
-    border: none;
-    font-size: 12px;
-    border-radius: 10px;
-    font-family: "Custom_Gelion";
-}

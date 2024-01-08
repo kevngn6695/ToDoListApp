@@ -5,10 +5,11 @@ import Body from "./components/Body.js";
 import Footer from "./components/Footer.js";
 
 import CustomMainContainer from "./components/CustomMainContainer.js";
+import CustomMenuContainer from "./components/CustomMenuContainer.js";
 import CustomTextHeading from "./components/CustomTextHeading.js";
 import CustomTextInput from "./components/CustomTextInput.js";
 import CustomTextDisplay from "./components/CustomTextDisplay.js";
-import CustomEditModal from "./components/CustomEditModal.js";
+import CustomMenuTextInput from "./components/CustomMenuTextInput.js";
 
 function App() {
   // Day
@@ -26,28 +27,48 @@ function App() {
     className: "to-do-body",
   };
 
+  // Initialize menu container props
+  const customMenuContainerProps = {
+    className: "to-do-menu-container",
+  };
+
   // Initialize main container props
   const customMainContainerProps = {
     className: "to-do-main-container",
   };
 
   // Initialize text heading props
-  const customTextHeadingProps = {
-    className: "to-do-text-heading",
-    dateName: today,
+  const customMainTextHeadingProps = {
+    className: "to-do-main-text-heading",
+    children: today,
+  };
+
+  // Initialize text heading props
+  const customMenuTextHeadingProps = {
+    className: "to-do-menu-text-heading",
+    children: "Menu",
   };
 
   // Initialize text input props
-  const customTextInputProps = {
-    classNameForm: "to-do-text-input-form",
-    classNameInput: "to-do-text-input",
+  const customMainTextInputProps = {
+    classNameForm: "to-do-main-text-input-form",
+    classNameInput: "to-do-main-text-input",
     type: "text",
     placeholder: "Add a task",
+  };
+
+  // Initialize text input props
+  const customMenuTextInputProps = {
+    classNameForm: "to-do-menu-text-input-form",
+    classNameInput: "to-do-menu-text-input",
+    type: "text",
+    placeholder: "Rearch",
   };
 
   // Initialize text display props
   const customTextDisplayProps = {
     classNameContainer: "to-do-text-display-container",
+    classNameModal: "to-do-modal",
   };
 
   // Initialize footer props
@@ -61,8 +82,12 @@ function App() {
       <Header></Header>
       <Body {...customBodyProps}>
         <CustomMainContainer {...customMainContainerProps}>
-          <CustomTextHeading {...customTextHeadingProps} />
-          <CustomTextInput {...customTextInputProps} />
+          <CustomMenuContainer {...customMenuContainerProps}>
+            <CustomTextHeading {...customMenuTextHeadingProps} />
+            <CustomMenuTextInput {...customMenuTextInputProps} />
+          </CustomMenuContainer>
+          <CustomTextHeading {...customMainTextHeadingProps} />
+          <CustomTextInput {...customMainTextInputProps} />
           <CustomTextDisplay {...customTextDisplayProps} />
         </CustomMainContainer>
       </Body>
