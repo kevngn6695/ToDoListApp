@@ -1,4 +1,4 @@
-@import url('../fonts/fonts.css');
+
 .to-do-text-display-container{
     width: 30%;
     padding: 10px;
@@ -6,6 +6,7 @@
     position: absolute;
     top: 55%;
     transform: translate(0, -50%);
+
 }
 
 button{
@@ -16,5 +17,5 @@ button{
     border: none;
     font-size: 12px;
     border-radius: 10px;
-    font-family: "Custom_Gelion";
+
 }

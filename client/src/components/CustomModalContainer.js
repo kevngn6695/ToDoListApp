@@ -11,7 +11,7 @@ function CustomModalContainer(props) {
     classNameForm: "to-do-edit-text-input-form",
     classNameInput: "to-do-edit-text-input",
     type: "text",
-    placeholder: "Text here",
+    placeholder: props.description,
   };
   return (
     <section className={props.className}>

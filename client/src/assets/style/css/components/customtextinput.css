@@ -1,10 +1,9 @@
-@import url('../fonts/fonts.css');
+
 .to-do-main-text-input, .to-do-main-text-input-form, .to-do-menu-text-input-form, .to-do-menu-text-input, .to-do-edit-text-input-form,.to-do-edit-text-input{
     position: absolute;
 }
 .to-do-edit-text-input,.to-do-main-text-input,.to-do-menu-text-input{
     font-size: 12px;
-    font-family: "Custom_Gelion";
     border: 1px solid rgba(189, 195, 199, 0.8);
     outline: medium;
     border-radius: 5px;

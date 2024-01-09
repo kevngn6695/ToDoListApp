@@ -50,7 +50,10 @@ function CustomEditModal(props) {
             {todo.description}
           </div>
           {open === todo.todo_id && (
-            <CustomModalContainer {...customModalContainerProps}>
+            <CustomModalContainer
+              {...customModalContainerProps}
+              description={todo.description}
+            >
               {todo.description}
             </CustomModalContainer>
           )}
