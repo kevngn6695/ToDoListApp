@@ -1,24 +1,54 @@
 @import url('../fonts/fonts.css');
-
-.to-do-main-text-input, .to-do-main-text-input-form{
+.to-do-main-text-input, .to-do-main-text-input-form, .to-do-menu-text-input-form, .to-do-menu-text-input, .to-do-edit-text-input-form,.to-do-edit-text-input{
     position: absolute;
-    top: 20%;
-    left: 35.5%;
-    transform: translate(-35.5%, -50%);
 }
-
-.to-do-main-text-input-form{
-    width: 30%;
-    min-height: 4rem;
-}
-
-.to-do-main-text-input{
-    width: 100%;
-    padding: 5px 0px 5px 10px;
+.to-do-edit-text-input,.to-do-main-text-input,.to-do-menu-text-input{
     font-size: 12px;
     font-family: "Custom_Gelion";
     border: 1px solid rgba(189, 195, 199, 0.8);
     outline: medium;
-    position: absolute;
     border-radius: 5px;
+}
+.to-do-menu-text-input-form, .to-do-edit-text-input-form{
+    width: 100%;
+}
+.to-do-main-text-input-form{
+    width: 50%;
+}
+.to-do-main-text-input, .to-do-main-text-input-form{
+    top: 12%;
+}
+
+
+.to-do-main-text-input{
+    width: 100%;
+    padding: 5px 0px 5px 10px;
+}
+
+.to-do-menu-text-input-form{
+
+    top: 10%;
+
+}
+
+.to-do-menu-text-input{
+    left: 5%;
+    width: 80%;
+    font-size: 10px;
+    padding: 5px 0px 5px 10px;
+}
+
+.to-do-edit-text-input, .to-do-edit-text-input-form{
+    top: 10%;
+}
+
+.to-do-edit-text-input-form{
+
+}
+
+.to-do-edit-text-input{
+    width: 85%;
+    padding: 2.5px 5px;
+    left: 5%;
+
 }

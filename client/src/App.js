@@ -6,12 +6,16 @@ import Footer from "./components/Footer.js";
 
 import CustomMainContainer from "./components/CustomMainContainer.js";
 import CustomMenuContainer from "./components/CustomMenuContainer.js";
+import CustomDisplayContainer from "./components/CustomDisplayContainer.js";
 import CustomTextHeading from "./components/CustomTextHeading.js";
 import CustomTextInput from "./components/CustomTextInput.js";
 import CustomTextDisplay from "./components/CustomTextDisplay.js";
-import CustomMenuTextInput from "./components/CustomMenuTextInput.js";
+
+import { useState } from "react";
 
 function App() {
+  const [description, setDescription] = useState(""); // Initialize the state for manipulating descriptions from the api
+
   // Day
   const date = new Date();
   const currentYear = date.getFullYear();
@@ -21,6 +25,26 @@ function App() {
     return dayNames[dayIdx];
   };
   const today = getDateNames(date);
+
+  const handleOnChange = (e) => {
+    setDescription(e.target.value);
+  };
+
+  const handleOnSubmit = async (e) => {
+    try {
+      e.preventDefault();
+      const body = { description };
+      const res = await fetch("http://localhost:5000/todos", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(body),
+      });
+
+      console.log(res);
+    } catch (err) {
+      console.err(err.message);
+    }
+  };
 
   // Initialize body tag props
   const customBodyProps = {
@@ -35,6 +59,11 @@ function App() {
   // Initialize main container props
   const customMainContainerProps = {
     className: "to-do-main-container",
+  };
+
+  // Initialize display container props
+  const customDisplayContainerProps = {
+    className: "to-do-display-container",
   };
 
   // Initialize text heading props
@@ -55,6 +84,9 @@ function App() {
     classNameInput: "to-do-main-text-input",
     type: "text",
     placeholder: "Add a task",
+    onChange: handleOnChange,
+    onSubmit: handleOnSubmit,
+    description: description,
   };
 
   // Initialize text input props
@@ -84,11 +116,13 @@ function App() {
         <CustomMainContainer {...customMainContainerProps}>
           <CustomMenuContainer {...customMenuContainerProps}>
             <CustomTextHeading {...customMenuTextHeadingProps} />
-            <CustomMenuTextInput {...customMenuTextInputProps} />
+            <CustomTextInput {...customMenuTextInputProps} />
           </CustomMenuContainer>
-          <CustomTextHeading {...customMainTextHeadingProps} />
-          <CustomTextInput {...customMainTextInputProps} />
-          <CustomTextDisplay {...customTextDisplayProps} />
+          <CustomDisplayContainer {...customDisplayContainerProps}>
+            <CustomTextHeading {...customMainTextHeadingProps} />
+            <CustomTextInput {...customMainTextInputProps} />
+            <CustomTextDisplay {...customTextDisplayProps} />
+          </CustomDisplayContainer>
         </CustomMainContainer>
       </Body>
       <Footer {...customFooterProps} />

@@ -5,15 +5,15 @@ import CustomModalContainer from "./CustomModalContainer";
 import { useEffect, useState } from "react";
 
 function CustomEditModal(props) {
-  const customModalContainerProps = {
-    className: "to-do-modal-container",
-  };
-
   const [todos, setTodo] = useState([]);
   const [open, setopen] = useState(null);
 
   const toggleDiv = (divName) => {
     setopen((prevopen) => (prevopen === divName ? null : divName));
+  };
+
+  const customModalContainerProps = {
+    className: "to-do-modal-container",
   };
 
   const getTodo = async () => {
