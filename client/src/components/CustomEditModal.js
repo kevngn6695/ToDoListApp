@@ -2,7 +2,7 @@ import "../assets/style/css/components/customeditmodal.css";
 
 import CustomModalContainer from "./CustomModalContainer";
 
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 function CustomEditModal(props) {
   const [todos, setTodo] = useState([]);
@@ -30,6 +30,18 @@ function CustomEditModal(props) {
     }
   };
 
+  const handelDeleteItem = async (id) => {
+    try {
+      const deleteItem = await fetch(`http://localhost:5000/todos/${id}`, {
+        method: "DELETE",
+      });
+
+      setTodo(todos.filter((todo) => todo.id !== id));
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
+
   useEffect(() => {
     const id = setInterval(() => {
       getTodo();
@@ -49,15 +61,21 @@ function CustomEditModal(props) {
           >
             {todo.description}
           </div>
+        </>
+      ))}
+
+      {todos.map((todo) => (
+        <React.Fragment key={todo.todo_id}>
           {open === todo.todo_id && (
             <CustomModalContainer
               {...customModalContainerProps}
               description={todo.description}
+              onDelete={() => handelDeleteItem(todo.todo_id)}
             >
               {todo.description}
             </CustomModalContainer>
           )}
-        </>
+        </React.Fragment>
       ))}
     </div>
   );

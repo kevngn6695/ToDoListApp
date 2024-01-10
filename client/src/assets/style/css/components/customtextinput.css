@@ -1,23 +1,30 @@
-
+@import url("../fonts/fonts.css");
 .to-do-main-text-input, .to-do-main-text-input-form, .to-do-menu-text-input-form, .to-do-menu-text-input, .to-do-edit-text-input-form,.to-do-edit-text-input{
     position: absolute;
 }
+
 .to-do-edit-text-input,.to-do-main-text-input,.to-do-menu-text-input{
     font-size: 12px;
     border: 1px solid rgba(189, 195, 199, 0.8);
     outline: medium;
     border-radius: 5px;
+    font-family: "Custom_Gelion";
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
+
 .to-do-menu-text-input-form, .to-do-edit-text-input-form{
     width: 100%;
 }
+
 .to-do-main-text-input-form{
     width: 50%;
 }
+
 .to-do-main-text-input, .to-do-main-text-input-form{
     top: 12%;
 }
-
 
 .to-do-main-text-input{
     width: 100%;
@@ -25,9 +32,7 @@
 }
 
 .to-do-menu-text-input-form{
-
     top: 10%;
-
 }
 
 .to-do-menu-text-input{
@@ -41,13 +46,8 @@
     top: 10%;
 }
 
-.to-do-edit-text-input-form{
-
-}
-
 .to-do-edit-text-input{
     width: 85%;
     padding: 2.5px 5px;
     left: 5%;
-
 }
