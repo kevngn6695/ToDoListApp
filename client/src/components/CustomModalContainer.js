@@ -24,6 +24,7 @@ function CustomModalContainer(props) {
 
   return (
     <section className={props.className}>
+      <button onClick={props.onClose}>Close</button>
       <CustomTextHeading {...customTextHeadingProps} />
       <CustomTextInput {...customTextInputProps} />
       <CustomButton {...customButtonProps} />

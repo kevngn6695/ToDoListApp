@@ -6,10 +6,10 @@ import React, { useEffect, useState } from "react";
 
 function CustomEditModal(props) {
   const [todos, setTodo] = useState([]);
-  const [open, setopen] = useState(null);
+  const [open, setOpen] = useState(null);
 
   const toggleDiv = (divName) => {
-    setopen((prevopen) => (prevopen === divName ? null : divName));
+    setOpen((prevopen) => (prevopen === divName ? null : divName));
   };
 
   const customModalContainerProps = {
@@ -47,8 +47,24 @@ function CustomEditModal(props) {
       getTodo();
     }, 100);
 
-    return () => clearInterval(id);
+    return () => {
+      clearInterval(id);
+    };
   }, [todos]);
+
+  const handleOutsideClick = (e) => {
+    if (open && e.target.closest(".to-do-main-container") === null) {
+      setOpen(null);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("click", handleOutsideClick);
+
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, [open]);
 
   return (
     <div className={props.className}>
@@ -71,6 +87,7 @@ function CustomEditModal(props) {
               {...customModalContainerProps}
               description={todo.description}
               onDelete={() => handelDeleteItem(todo.todo_id)}
+              onClose={() => setOpen(null)}
             >
               {todo.description}
             </CustomModalContainer>
