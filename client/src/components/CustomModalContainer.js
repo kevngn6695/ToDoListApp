@@ -16,7 +16,11 @@ function CustomModalContainer(props) {
     type: "text",
     placeholder: props.description,
   };
-  const customButtonProps = {
+  const customCloseButtonProps = {
+    className: "to-do-close-button",
+    onClick: props.onClose,
+  };
+  const customDeleteButtonProps = {
     className: "to-do-delete-button",
     children: "Delete",
     onClick: props.onDelete,
@@ -24,10 +28,10 @@ function CustomModalContainer(props) {
 
   return (
     <section className={props.className}>
-      <button onClick={props.onClose}>Close</button>
+      <CustomButton {...customCloseButtonProps}></CustomButton>
       <CustomTextHeading {...customTextHeadingProps} />
       <CustomTextInput {...customTextInputProps} />
-      <CustomButton {...customButtonProps} />
+      <CustomButton {...customDeleteButtonProps} />
     </section>
   );
 }

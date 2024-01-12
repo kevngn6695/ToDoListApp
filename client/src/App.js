@@ -10,11 +10,15 @@ import CustomDisplayContainer from "./components/CustomDisplayContainer.js";
 import CustomTextHeading from "./components/CustomTextHeading.js";
 import CustomTextInput from "./components/CustomTextInput.js";
 import CustomTextDisplay from "./components/CustomTextDisplay.js";
+import CustomButton from "./components/CustomButton.js";
 
 import { useState } from "react";
+import CustomMenuSymbol from "./components/CustomMenuSymbol.js";
 
 function App() {
   const [description, setDescription] = useState(""); // Initialize the state for manipulating descriptions from the api
+
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
   // Day
   const date = new Date();
@@ -44,6 +48,10 @@ function App() {
     } catch (err) {
       console.err(err.message);
     }
+  };
+
+  const handleButtonClick = () => {
+    setMenuOpen(!isMenuOpen);
   };
 
   // Initialize body tag props
@@ -97,6 +105,15 @@ function App() {
     placeholder: "Rearch",
   };
 
+  const customMenuButtonProps = {
+    className: `to-do-menu-button ${isMenuOpen ? "open" : ""}`,
+    onClick: handleButtonClick,
+  };
+
+  const customMenuSymbolProps = {
+    className: `to-do-menu-symbol`,
+  };
+
   // Initialize text display props
   const customTextDisplayProps = {
     classNameContainer: "to-do-text-display-container",
@@ -115,6 +132,9 @@ function App() {
       <Body {...customBodyProps}>
         <CustomMainContainer {...customMainContainerProps}>
           <CustomMenuContainer {...customMenuContainerProps}>
+            <CustomButton {...customMenuButtonProps}>
+              <CustomMenuSymbol {...customMenuSymbolProps} />
+            </CustomButton>
             <CustomTextHeading {...customMenuTextHeadingProps} />
             <CustomTextInput {...customMenuTextInputProps} />
           </CustomMenuContainer>
