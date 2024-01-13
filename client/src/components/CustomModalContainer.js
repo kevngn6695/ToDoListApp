@@ -5,6 +5,8 @@ import CustomTextInput from "./CustomTextInput";
 import CustomButton from "./CustomButton";
 import CustomCloseSymbol from "./CustomCloseSymbol";
 
+import { capitalizeFirst } from "../services/capitalizeFirst";
+
 // import { useState } from "react";
 function CustomModalContainer(props) {
   const customTextHeadingProps = {
@@ -15,7 +17,7 @@ function CustomModalContainer(props) {
     classNameForm: "to-do-edit-text-input-form",
     classNameInput: "to-do-edit-text-input",
     type: "text",
-    placeholder: props.description,
+    placeholder: capitalizeFirst(props.description),
   };
   const customCloseButtonProps = {
     className: "to-do-close-button",

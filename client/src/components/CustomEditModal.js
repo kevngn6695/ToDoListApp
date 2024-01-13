@@ -4,6 +4,8 @@ import CustomModalContainer from "./CustomModalContainer";
 
 import React, { useEffect, useState } from "react";
 
+import { capitalizeFirst } from "../services/capitalizeFirst";
+
 function CustomEditModal(props) {
   const [todos, setTodo] = useState([]);
   const [open, setOpen] = useState(null);
@@ -75,7 +77,7 @@ function CustomEditModal(props) {
             onClick={() => toggleDiv(todo.todo_id)}
             key={todo.todo_id}
           >
-            {todo.description}
+            {capitalizeFirst(todo.description)}
           </div>
         </>
       ))}
@@ -89,7 +91,7 @@ function CustomEditModal(props) {
               onDelete={() => handelDeleteItem(todo.todo_id)}
               onClose={() => setOpen(null)}
             >
-              {todo.description}
+              {capitalizeFirst(todo.description)}
             </CustomModalContainer>
           )}
         </React.Fragment>
