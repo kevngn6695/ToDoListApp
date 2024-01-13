@@ -128,7 +128,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header></Header>
+      <Header />
       <Body {...customBodyProps}>
         <CustomMainContainer {...customMainContainerProps}>
           <CustomMenuContainer {...customMenuContainerProps}>

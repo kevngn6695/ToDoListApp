@@ -3,6 +3,7 @@ import "../assets/style/css/components/custommodalcontainer.css";
 import CustomTextHeading from "./CustomTextHeading";
 import CustomTextInput from "./CustomTextInput";
 import CustomButton from "./CustomButton";
+import CustomCloseSymbol from "./CustomCloseSymbol";
 
 // import { useState } from "react";
 function CustomModalContainer(props) {
@@ -20,6 +21,11 @@ function CustomModalContainer(props) {
     className: "to-do-close-button",
     onClick: props.onClose,
   };
+
+  const customCloseSymbolProps = {
+    className: "to-do-close-symbol",
+  };
+
   const customDeleteButtonProps = {
     className: "to-do-delete-button",
     children: "Delete",
@@ -28,7 +34,11 @@ function CustomModalContainer(props) {
 
   return (
     <section className={props.className}>
-      <CustomButton {...customCloseButtonProps}></CustomButton>
+      <CustomButton {...customCloseButtonProps}>
+        {/* <CustomCloseSymbol {...customCloseSymbolProps} /> */}
+        <span className="to-do-close-symbol"></span>
+        <span className="to-do-close-symbol"></span>
+      </CustomButton>
       <CustomTextHeading {...customTextHeadingProps} />
       <CustomTextInput {...customTextInputProps} />
       <CustomButton {...customDeleteButtonProps} />
