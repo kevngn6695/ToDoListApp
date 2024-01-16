@@ -34,7 +34,7 @@ function CustomEditModal(props) {
 
   const handelDeleteItem = async (id) => {
     try {
-      const deleteItem = await fetch(`http://localhost:5000/todos/${id}`, {
+      await fetch(`http://localhost:5000/todos/${id}`, {
         method: "DELETE",
       });
 
@@ -60,6 +60,10 @@ function CustomEditModal(props) {
     }
   };
 
+  const handleDragStart = (e, id) => {
+    e.dataTransfer.setData("text/plain", id);
+  };
+
   useEffect(() => {
     document.addEventListener("click", handleOutsideClick);
 
@@ -75,6 +79,8 @@ function CustomEditModal(props) {
           <div
             className={props.classNameModal}
             onClick={() => toggleDiv(todo.todo_id)}
+            onDragStart={(e) => handleDragStart(e, todo.todo_id)}
+            draggable
             key={todo.todo_id}
           >
             {capitalizeFirst(todo.description)}

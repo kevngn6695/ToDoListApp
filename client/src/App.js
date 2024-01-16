@@ -11,8 +11,10 @@ import CustomTextHeading from "./components/CustomTextHeading.js";
 import CustomTextInput from "./components/CustomTextInput.js";
 import CustomTextDisplay from "./components/CustomTextDisplay.js";
 import CustomButton from "./components/CustomButton.js";
+import CustomDeleteBin from "./components/CustomDeleteBin.js";
 
 import { useState } from "react";
+
 import CustomMenuSymbol from "./components/CustomMenuSymbol.js";
 
 function App() {
@@ -130,6 +132,7 @@ function App() {
     <div className="App">
       <Header />
       <Body {...customBodyProps}>
+        <CustomDeleteBin />
         <CustomMainContainer {...customMainContainerProps}>
           <CustomMenuContainer {...customMenuContainerProps}>
             <CustomButton {...customMenuButtonProps}>
