@@ -2,9 +2,10 @@ import "../assets/style/css/components/customdeletebin.css";
 
 import { useState } from "react";
 
-import Lottie from "react-lottie";
+// import Lottie from "react-lottie";
 
-import recycleBinHover from "../assets/media/images/icons/json/recycle-bin.json";
+// import recycleBinHover from "../assets/media/images/icons/json/recycle-bin.json";
+import deleteIcon from "../assets/media/images/icons/icons/delete.png";
 
 function CustomDeleteBin(props) {
   const [todos, setTodo] = useState([]);
@@ -38,23 +39,24 @@ function CustomDeleteBin(props) {
     setIsDraggable(false);
   };
 
-  const defaultOptions = {
-    loop: false,
-    autoplay: false,
-    animationData: recycleBinHover,
-  };
+  // const defaultOptions = {
+  //   loop: false,
+  //   autoplay: false,
+  //   animationData: recycleBinHover,
+  // };
 
   return (
     <div
-      className={`${props.className} ${isDraggable ? "draggable" : ""}`}
-      onDragOver={handleDragOver}
-      onDragLeave={handleDragLeave}
-      onDrop={handleDragDrop}
+      className={`${props.classNameWrapper} ${isDraggable ? "draggable" : ""}`}
     >
-      <Lottie
-        options={defaultOptions}
-        style={{ width: "30px", height: "30px" }}
-      />
+      <div
+        className={`${props.className} `}
+        onDragOver={handleDragOver}
+        onDragLeave={handleDragLeave}
+        onDrop={handleDragDrop}
+      >
+        <img className="to-do-delete-icon" src={deleteIcon} />
+      </div>
     </div>
   );
 }

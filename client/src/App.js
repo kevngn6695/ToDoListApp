@@ -116,6 +116,11 @@ function App() {
     className: `to-do-menu-symbol`,
   };
 
+  const customDeleteButtonProps = {
+    classNameWrapper: "to-do-delete-icon-wrapper",
+    className: "to-do-delete",
+  };
+
   // Initialize text display props
   const customTextDisplayProps = {
     classNameContainer: "to-do-text-display-container",
@@ -132,7 +137,7 @@ function App() {
     <div className="App">
       <Header />
       <Body {...customBodyProps}>
-        <CustomDeleteBin />
+        <CustomDeleteBin {...customDeleteButtonProps} />
         <CustomMainContainer {...customMainContainerProps}>
           <CustomMenuContainer {...customMenuContainerProps}>
             <CustomButton {...customMenuButtonProps}>

@@ -5,6 +5,7 @@ import CustomEditModal from "./CustomEditModal";
 function CustomTextDisplay(props) {
   const customEditModalProps = {
     className: props.classNameContainer,
+    classNameModal: props.classNameModal,
   };
   return <CustomEditModal {...customEditModalProps} />;
 }
