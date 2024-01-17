@@ -10,23 +10,18 @@ import CustomDisplayContainer from "./components/CustomDisplayContainer.js";
 import CustomTextHeading from "./components/CustomTextHeading.js";
 import CustomTextInput from "./components/CustomTextInput.js";
 import CustomTextDisplay from "./components/CustomTextDisplay.js";
-import CustomButton from "./components/CustomButton.js";
 import CustomDeleteBin from "./components/CustomDeleteBin.js";
 
 import { useState } from "react";
 
-import CustomMenuSymbol from "./components/CustomMenuSymbol.js";
-
 function App() {
   const [description, setDescription] = useState(""); // Initialize the state for manipulating descriptions from the api
-
-  const [isMenuOpen, setMenuOpen] = useState(false);
 
   // Day
   const date = new Date();
   const currentYear = date.getFullYear();
   const getDateNames = (date) => {
-    const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const dayNames = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
     const dayIdx = date.getDay();
     return dayNames[dayIdx];
   };
@@ -50,10 +45,6 @@ function App() {
     } catch (err) {
       console.err(err.message);
     }
-  };
-
-  const handleButtonClick = () => {
-    setMenuOpen(!isMenuOpen);
   };
 
   // Initialize body tag props
@@ -107,15 +98,6 @@ function App() {
     placeholder: "Rearch",
   };
 
-  const customMenuButtonProps = {
-    className: `to-do-menu-button ${isMenuOpen ? "open" : ""}`,
-    onClick: handleButtonClick,
-  };
-
-  const customMenuSymbolProps = {
-    className: `to-do-menu-symbol`,
-  };
-
   const customDeleteButtonProps = {
     classNameWrapper: "to-do-delete-icon-wrapper",
     className: "to-do-delete",
@@ -140,9 +122,6 @@ function App() {
         <CustomDeleteBin {...customDeleteButtonProps} />
         <CustomMainContainer {...customMainContainerProps}>
           <CustomMenuContainer {...customMenuContainerProps}>
-            <CustomButton {...customMenuButtonProps}>
-              <CustomMenuSymbol {...customMenuSymbolProps} />
-            </CustomButton>
             <CustomTextHeading {...customMenuTextHeadingProps} />
             <CustomTextInput {...customMenuTextInputProps} />
           </CustomMenuContainer>
