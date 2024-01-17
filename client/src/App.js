@@ -14,17 +14,18 @@ import CustomDeleteBin from "./components/CustomDeleteBin.js";
 
 import { useState } from "react";
 
+function getDateNames(date) {
+  const dayNames = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+  const dayIdx = date.getDay();
+  return dayNames[dayIdx];
+}
+
 function App() {
   const [description, setDescription] = useState(""); // Initialize the state for manipulating descriptions from the api
 
   // Day
   const date = new Date();
   const currentYear = date.getFullYear();
-  const getDateNames = (date) => {
-    const dayNames = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
-    const dayIdx = date.getDay();
-    return dayNames[dayIdx];
-  };
   const today = getDateNames(date);
 
   const handleOnChange = (e) => {
@@ -73,12 +74,6 @@ function App() {
     children: today,
   };
 
-  // Initialize text heading props
-  const customMenuTextHeadingProps = {
-    className: "to-do-menu-text-heading",
-    children: "Menu",
-  };
-
   // Initialize text input props
   const customMainTextInputProps = {
     classNameForm: "to-do-main-text-input-form",
@@ -88,14 +83,6 @@ function App() {
     onChange: handleOnChange,
     onSubmit: handleOnSubmit,
     description: description,
-  };
-
-  // Initialize text input props
-  const customMenuTextInputProps = {
-    classNameForm: "to-do-menu-text-input-form",
-    classNameInput: "to-do-menu-text-input",
-    type: "text",
-    placeholder: "Rearch",
   };
 
   const customDeleteButtonProps = {
@@ -121,10 +108,7 @@ function App() {
       <Body {...customBodyProps}>
         <CustomDeleteBin {...customDeleteButtonProps} />
         <CustomMainContainer {...customMainContainerProps}>
-          <CustomMenuContainer {...customMenuContainerProps}>
-            <CustomTextHeading {...customMenuTextHeadingProps} />
-            <CustomTextInput {...customMenuTextInputProps} />
-          </CustomMenuContainer>
+          <CustomMenuContainer {...customMenuContainerProps} />
           <CustomDisplayContainer {...customDisplayContainerProps}>
             <CustomTextHeading {...customMainTextHeadingProps} />
             <CustomTextInput {...customMainTextInputProps} />

@@ -1,18 +1,24 @@
 @import url('../fonts/fonts.css');
-
+@import url('../animations/animations.css');
 .to-do-main-text-heading, .to-do-menu-text-heading, .to-do-edit-text-heading{
     position: absolute;
 }
+
 .to-do-main-text-heading{
     top: 2.5%;
     font-size: 35px;
 }
+
 .to-do-menu-text-heading,.to-do-edit-text-heading{
     left: 5%;
     top: 2.5%;
     font-size: 20px;
 }
 
+.to-do-menu-text-heading.open{
+    -webkit-animation: 2s ease 0s normal forwards 1 fadein;
+    animation: 2s ease 0s normal forwards 1 fadein;
+}
 
 h1{
    font-family: "Custom_Gelion_Bold"; 
