@@ -1,6 +1,6 @@
 import "../assets/style/css/components/customdeletebin.css";
 
-import { useState } from "react";
+import React, { useState } from "react";
 
 // import Lottie from "react-lottie";
 
@@ -61,4 +61,4 @@ function CustomDeleteBin(props) {
   );
 }
 
-export default CustomDeleteBin;
+export default React.memo(CustomDeleteBin);

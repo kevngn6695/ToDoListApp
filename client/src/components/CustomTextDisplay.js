@@ -2,12 +2,15 @@ import "../assets/style/css/components/customtextdisplay.css";
 
 import CustomEditModal from "./CustomEditModal";
 
+import React from "react";
+
 function CustomTextDisplay(props) {
-  const customEditModalProps = {
-    className: props.classNameContainer,
-    classNameModal: props.classNameModal,
-  };
-  return <CustomEditModal {...customEditModalProps} />;
+  return (
+    <CustomEditModal
+      className={props.classNameContainer}
+      classNameModal={props.classNameModal}
+    />
+  );
 }
 
-export default CustomTextDisplay;
+export default React.memo(CustomTextDisplay);

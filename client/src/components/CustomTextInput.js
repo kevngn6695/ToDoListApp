@@ -1,5 +1,6 @@
 import "../assets/style/css/components/customtextinput.css";
-// import { useState } from "react";
+
+import React from "react";
 
 function CustomTextInput(props) {
   return (
@@ -16,4 +17,4 @@ function CustomTextInput(props) {
   );
 }
 
-export default CustomTextInput;
+export default React.memo(CustomTextInput);

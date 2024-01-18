@@ -1,5 +1,7 @@
 import "../assets/style/css/components/custommenusymbol.css";
 
+import React from "react";
+
 function CustomMenuSymbol(props) {
   return (
     <>
@@ -10,4 +12,4 @@ function CustomMenuSymbol(props) {
   );
 }
 
-export default CustomMenuSymbol;
+export default React.memo(CustomMenuSymbol);

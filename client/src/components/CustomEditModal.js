@@ -96,4 +96,4 @@ function CustomEditModal(props) {
   );
 }
 
-export default CustomEditModal;
+export default React.memo(CustomEditModal);

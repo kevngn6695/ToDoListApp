@@ -1,5 +1,7 @@
 import "../assets/style/css/components/customclosesymbol.css";
 
+import React from "react";
+
 function CustomCloseSymbol(props) {
   return (
     <>
@@ -9,4 +11,4 @@ function CustomCloseSymbol(props) {
   );
 }
 
-export default CustomCloseSymbol;
+export default React.memo(CustomCloseSymbol);

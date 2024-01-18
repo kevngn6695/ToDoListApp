@@ -1,5 +1,7 @@
 import "../assets/style/css/main/footer.css";
 
+import React from "react";
+
 function Footer(props) {
   return (
     <footer>
@@ -10,4 +12,4 @@ function Footer(props) {
   );
 }
 
-export default Footer;
+export default React.memo(Footer);

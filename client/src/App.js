@@ -12,7 +12,7 @@ import CustomTextInput from "./components/CustomTextInput.js";
 import CustomTextDisplay from "./components/CustomTextDisplay.js";
 import CustomDeleteBin from "./components/CustomDeleteBin.js";
 
-import { useState } from "react";
+import React, { useState } from "react";
 
 function getDateNames(date) {
   const dayNames = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
@@ -48,77 +48,40 @@ function App() {
     }
   };
 
-  // Initialize body tag props
-  const customBodyProps = {
-    className: "to-do-body",
-  };
-
-  // Initialize menu container props
-  const customMenuContainerProps = {
-    className: "to-do-menu-container",
-  };
-
-  // Initialize main container props
-  const customMainContainerProps = {
-    className: "to-do-main-container",
-  };
-
-  // Initialize display container props
-  const customDisplayContainerProps = {
-    className: "to-do-display-container",
-  };
-
-  // Initialize text heading props
-  const customMainTextHeadingProps = {
-    className: "to-do-main-text-heading",
-    children: today,
-  };
-
-  // Initialize text input props
-  const customMainTextInputProps = {
-    classNameForm: "to-do-main-text-input-form",
-    classNameInput: "to-do-main-text-input",
-    type: "text",
-    placeholder: "Add a task",
-    onChange: handleOnChange,
-    onSubmit: handleOnSubmit,
-    description: description,
-  };
-
-  const customDeleteButtonProps = {
-    classNameWrapper: "to-do-delete-icon-wrapper",
-    className: "to-do-delete",
-  };
-
-  // Initialize text display props
-  const customTextDisplayProps = {
-    classNameContainer: "to-do-text-display-container",
-    classNameModal: "to-do-modal",
-  };
-
-  // Initialize footer props
-  const customFooterProps = {
-    className: "to-do-footer-paragraph",
-    currentYear: currentYear,
-  };
-
   return (
     <div className="App">
       <Header />
-      <Body {...customBodyProps}>
-        <CustomDeleteBin {...customDeleteButtonProps} />
-        <CustomMainContainer {...customMainContainerProps}>
-          <CustomMenuContainer {...customMenuContainerProps} />
-          <CustomDisplayContainer {...customDisplayContainerProps}>
-            <CustomTextHeading {...customMainTextHeadingProps} />
-            <CustomTextInput {...customMainTextInputProps} />
-            <CustomTextDisplay {...customTextDisplayProps} />
+      <Body className="to-do-body">
+        <CustomDeleteBin
+          classNameWrapper="to-do-delete-icon-wrapper"
+          className="to-do-delete"
+        />
+        <CustomMainContainer className="to-do-main-container">
+          <CustomMenuContainer className="to-do-menu-container" />
+          <CustomDisplayContainer className="to-do-display-container">
+            <CustomTextHeading
+              className="to-do-main-text-heading"
+              children={today}
+            />
+            <CustomTextInput
+              classNameForm="to-do-main-text-input-form"
+              classNameInput="to-do-main-text-input"
+              type="text"
+              placeholder="Add a task"
+              onChange={handleOnChange}
+              onSubmit={handleOnSubmit}
+              description={description}
+            />
+            <CustomTextDisplay
+              classNameContainer="to-do-text-display-container"
+              classNameModal="to-do-modal"
+            />
           </CustomDisplayContainer>
         </CustomMainContainer>
       </Body>
-      <Footer {...customFooterProps} />
+      <Footer className="to-do-footer-paragraph" currentYear={currentYear} />
     </div>
   );
 }
 
-export default App;
+export default React.memo(App);
