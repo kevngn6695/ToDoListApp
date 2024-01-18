@@ -1,4 +1,4 @@
-import "../assets/style/css/components/custommodalcontainer.css";
+import "../assets/style/css/components/customcontainer.css";
 
 import CustomTextHeading from "./CustomTextHeading";
 import CustomTextInput from "./CustomTextInput";

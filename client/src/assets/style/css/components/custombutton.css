@@ -19,10 +19,15 @@
     right: -10px;
     top: -10px;
 }
+.to-do-menu-button.open, .to-do-menu-button.closed{
+  right: 5%;
+}
+.to-do-menu-button.closed{
+  transform: translate(-25%, 0%)
+}
 
 .to-do-menu-button{
   flex-direction: column;
-  right: 5%;
   display: flex;
   justify-content: center;
   align-items: center;

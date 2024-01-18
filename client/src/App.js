@@ -62,6 +62,7 @@ function App() {
             <CustomTextHeading
               className="to-do-main-text-heading"
               children={today}
+              h1
             />
             <CustomTextInput
               classNameForm="to-do-main-text-input-form"

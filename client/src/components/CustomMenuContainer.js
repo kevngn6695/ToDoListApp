@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from "react";
-import "../assets/style/css/components/custommenucontainer.css";
+import React, { useState } from "react";
+
+import "../assets/style/css/components/customcontainer.css";
 
 import CustomMenuSymbol from "./CustomMenuSymbol.js";
 import CustomButton from "./CustomButton.js";
@@ -28,6 +29,7 @@ function CustomMenuContainer(props) {
               isMenuOpen ? "open" : "closed"
             }`}
             children="Menu"
+            h1
           />
           <CustomTextInput
             classNameForm={`to-do-menu-text-input-form ${
@@ -38,6 +40,13 @@ function CustomMenuContainer(props) {
             }`}
             type="text"
             placeholder="Rearch"
+          />
+          <CustomTextHeading
+            className={`to-do-menu-tasks-text-heading ${
+              isMenuOpen ? "open" : "closed"
+            }`}
+            children={`TASKS`}
+            h6
           />
         </>
       )}

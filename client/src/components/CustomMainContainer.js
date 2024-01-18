@@ -1,4 +1,4 @@
-import "../assets/style/css/components/custommaincontainer.css";
+import "../assets/style/css/components/customcontainer.css";
 
 import React from "react";
 
