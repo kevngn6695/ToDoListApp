@@ -4,7 +4,6 @@ import Header from "./components/Header.js";
 import Body from "./components/Body.js";
 import Footer from "./components/Footer.js";
 
-import CustomTitle from "./components/CustomTitle.js";
 import CustomMainContainer from "./components/CustomMainContainer.js";
 import CustomMenuContainer from "./components/CustomMenuContainer.js";
 import CustomDisplayContainer from "./components/CustomDisplayContainer.js";
@@ -51,9 +50,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header>
-        <CustomTitle children="To Do App" />
-      </Header>
+      <Header />
       <Body className="to-do-body">
         <CustomDeleteBin
           classNameWrapper="to-do-delete-icon-wrapper"
