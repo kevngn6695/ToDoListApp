@@ -9,6 +9,8 @@ function CustomTextDisplay(props) {
     <CustomEditModal
       className={props.classNameContainer}
       classNameModal={props.classNameModal}
+      modalOpen={props.modalOpen}
+      setModalOpen={props.setModalOpen}
     />
   );
 }

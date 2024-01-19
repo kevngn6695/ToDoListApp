@@ -28,6 +28,7 @@ function App() {
   const [description, setDescription] = useState(""); // Initialize the state for manipulating descriptions from the api
   const [date, setDate] = useState(newDate);
   const [time, setTime] = useState(newTime);
+  const [modalOpen, setModalOpen] = useState(null);
 
   // Day
   const dateStr = date.toLocaleDateString();
@@ -36,7 +37,6 @@ function App() {
   const today = dayNames[dayIdx];
 
   // Time
-
   const handleOnChange = (e) => {
     setDescription(e.target.value);
   };
@@ -70,12 +70,14 @@ function App() {
       <Header />
       <Body className="to-do-body">
         <CustomDeleteBin
-          classNameWrapper="to-do-delete-icon-wrapper"
+          classNameWrapper={`to-do-delete-icon-wrapper ${
+            modalOpen ? "open" : "closed"
+          }`}
           className="to-do-delete"
         />
         <CustomMainContainer className="to-do-main-container">
           <CustomMenuContainer className="to-do-menu-container" />
-          <CustomDisplayContainer className="to-do-display-container">
+          <CustomDisplayContainer className={`to-do-display-container`}>
             <CustomTextHeading
               className="to-do-main-text-heading-week-day"
               children={today}
@@ -92,8 +94,10 @@ function App() {
               h5
             />
             <CustomTextInput
-              classNameForm="to-do-main-text-input-form"
-              classNameInput="to-do-main-text-input"
+              classNameForm={`to-do-main-text-input-form ${
+                modalOpen ? "open" : "closed"
+              }`}
+              classNameInput={`to-do-main-text-input`}
               type="text"
               placeholder="Add a task"
               onChange={handleOnChange}
@@ -101,8 +105,12 @@ function App() {
               description={description}
             />
             <CustomTextDisplay
-              classNameContainer="to-do-text-display-container"
+              classNameContainer={`to-do-text-display-container ${
+                modalOpen ? "open" : "closed"
+              }`}
               classNameModal="to-do-modal"
+              modalOpen={modalOpen}
+              setModalOpen={setModalOpen}
             />
           </CustomDisplayContainer>
         </CustomMainContainer>

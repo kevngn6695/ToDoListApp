@@ -4,9 +4,34 @@
 */
 .to-do-display-container{
     width: 75%;
+    /* border: 1px solid black; */
     position: absolute;
     left: 25%;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    /* display: inline-block; */
     height: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+.to-do-text-display-container.closed{
+    width: 95%;
+    min-height: 300px;
+    position: absolute;
+    top: 55%;
+    /* border: 1px solid black; */
+    transform: translate(0, -50%);
+
+}
+
+.to-do-text-display-container.open{
+    width: 50%;
+    min-height: 300px;
+    position: absolute;
+    top: 55%;
+    /* border: 1px solid black; */
+    transform: translate(0, -50%);
 }
 
 /* 
@@ -15,6 +40,7 @@
 .to-do-main-container{
     width: 90%;
     min-height: 450px;
+    display: inline-block;
     border-radius: 30px;
     position: absolute;
     top: 50%;
@@ -40,6 +66,7 @@
     border-radius: 10px;
     top: 2.5%;
     left: 2.5%;
+    float: left;
     transition: all 0.5s ease-in-out;
     background-color: white;
     display: flex;
@@ -61,7 +88,7 @@
     Modal Container CSS
 */
 .to-do-modal-container{
-    width: 70%;
+    width: 300px;
     background-color: white;
     border-radius: 10px;
     min-height: 400px;

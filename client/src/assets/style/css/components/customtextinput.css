@@ -5,10 +5,6 @@
     position: absolute;
 }
 
-input::selection, input::-moz-selection, input::-webkit-selection{
-    color: white;
-    background-color: rgba(165, 55, 253, 0.3);
-}
 
 .to-do-edit-text-input,.to-do-main-text-input,.to-do-menu-text-input{
     font-size: 12px;
@@ -25,8 +21,12 @@ input::selection, input::-moz-selection, input::-webkit-selection{
     width: 100%;
 }
 
-.to-do-main-text-input-form{
+.to-do-main-text-input-form.open{
     width: 50%;
+    /* width: 100%; */
+}
+.to-do-main-text-input-form.closed{
+    width: 95%;
 }
 
 .to-do-main-text-input, .to-do-main-text-input-form{

@@ -12,10 +12,7 @@ function CustomEditModal(props) {
 
   const toggleDiv = (divName) => {
     setOpen((prevopen) => (prevopen === divName ? null : divName));
-  };
-
-  const customModalContainerProps = {
-    className: "to-do-modal-container",
+    props.setModalOpen((prevopen) => (prevopen === divName ? null : divName));
   };
 
   const getTodo = async () => {
@@ -64,7 +61,7 @@ function CustomEditModal(props) {
     <>
       <div className={props.className}>
         {todos.map((todo) => (
-          <>
+          <div className={props.classNameContainer}>
             <div
               className={props.classNameModal}
               onClick={() => toggleDiv(todo.todo_id)}
@@ -74,16 +71,15 @@ function CustomEditModal(props) {
             >
               {capitalizeFirst(todo.description)}
             </div>
-          </>
+          </div>
         ))}
 
         {todos.map((todo) => (
           <React.Fragment key={todo.todo_id}>
             {open === todo.todo_id && (
               <CustomModalContainer
-                {...customModalContainerProps}
+                className="to-do-modal-container"
                 description={todo.description}
-                // onDelete={() => handelDeleteItem(todo.todo_id)}
                 onClose={() => setOpen(null)}
               >
                 {capitalizeFirst(todo.description)}

@@ -5,14 +5,27 @@
     position: absolute;
     top: 17%;
     opacity: 1;
-    z-index: 1;
+    z-index: 0;
     right: 37.5%;
     transform: translate(-10%, -50%);
     background-color: white;
     transition: all 0.5s ease-in-out;   
 }
+.to-do-delete-icon-wrapper.closed{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    position: absolute;
+    top: 17%;
+    opacity: 1;
+    z-index: 0;
+    right: 10%;
+    transform: translate(-10%, -50%);
+    background-color: white;
+    transition: all 0.5s ease-in-out;   
+}
 
-.draggable,.to-do-delete-icon-wrapper:hover{
+.draggable,.to-do-delete-icon-wrapper.open:hover{
     box-shadow: 0px 1px 10px 4px rgba(165, 55, 253, 0.5);
     border-radius: 20%;
 }
