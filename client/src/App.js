@@ -12,21 +12,30 @@ import CustomTextInput from "./components/CustomTextInput.js";
 import CustomTextDisplay from "./components/CustomTextDisplay.js";
 import CustomDeleteBin from "./components/CustomDeleteBin.js";
 
-import React, { useState } from "react";
-
-function getDateNames(date) {
-  const dayNames = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
-  const dayIdx = date.getDay();
-  return dayNames[dayIdx];
-}
+import React, { useState, useEffect } from "react";
 
 function App() {
+  const dayNames = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
+  const options = {
+    hour: "numeric",
+    minute: "numeric",
+    hour12: false,
+  };
+
+  const newDate = new Date();
+  const newTime = new Date().toLocaleTimeString([], options);
+
   const [description, setDescription] = useState(""); // Initialize the state for manipulating descriptions from the api
+  const [date, setDate] = useState(newDate);
+  const [time, setTime] = useState(newTime);
 
   // Day
-  const date = new Date();
+  const dateStr = date.toLocaleDateString();
   const currentYear = date.getFullYear();
-  const today = getDateNames(date);
+  const dayIdx = date.getDay();
+  const today = dayNames[dayIdx];
+
+  // Time
 
   const handleOnChange = (e) => {
     setDescription(e.target.value);
@@ -48,6 +57,14 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setDate(new Date());
+      setTime(new Date().toLocaleTimeString([], options));
+    }, 1000);
+    return () => clearInterval(intervalId);
+  }, []);
+
   return (
     <div className="App">
       <Header />
@@ -60,9 +77,19 @@ function App() {
           <CustomMenuContainer className="to-do-menu-container" />
           <CustomDisplayContainer className="to-do-display-container">
             <CustomTextHeading
-              className="to-do-main-text-heading"
+              className="to-do-main-text-heading-week-day"
               children={today}
               h1
+            />
+            <CustomTextHeading
+              className="to-do-main-text-heading-date"
+              children={dateStr}
+              h5
+            />
+            <CustomTextHeading
+              className="to-do-main-text-heading-time"
+              children={time}
+              h5
             />
             <CustomTextInput
               classNameForm="to-do-main-text-input-form"

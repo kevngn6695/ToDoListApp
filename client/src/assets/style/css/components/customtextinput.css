@@ -5,6 +5,11 @@
     position: absolute;
 }
 
+input::selection, input::-moz-selection, input::-webkit-selection{
+    color: white;
+    background-color: rgba(165, 55, 253, 0.3);
+}
+
 .to-do-edit-text-input,.to-do-main-text-input,.to-do-menu-text-input{
     font-size: 12px;
     border: 1px solid rgba(189, 195, 199, 0.8);

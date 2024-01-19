@@ -9,7 +9,6 @@
     height: 100%;
 }
 
-
 /* 
     Main Container CSS
 */
@@ -31,7 +30,6 @@
     transition: all 0.5s ease-in-out;
 }
 
-
 /* 
     Menu Container CSS
 */
@@ -48,6 +46,7 @@
     justify-content: center;
     align-items: center;
 }
+
 .closed{
     width: 3%;
 }

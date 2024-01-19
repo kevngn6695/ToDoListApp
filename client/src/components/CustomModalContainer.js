@@ -17,7 +17,11 @@ function CustomModalContainer(props) {
         <span className="to-do-close-symbol"></span>
         <span className="to-do-close-symbol"></span>
       </CustomButton>
-      <CustomTextHeading className="to-do-edit-text-heading" children="Task" />
+      <CustomTextHeading
+        className="to-do-edit-text-heading"
+        children="Task"
+        h1
+      />
       <CustomTextInput
         classNameForm="to-do-edit-text-input-form"
         classNameInput="to-do-edit-text-input"
