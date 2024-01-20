@@ -7,6 +7,7 @@ import CustomButton from "./CustomButton";
 import { capitalizeFirst } from "../services/capitalizeFirst";
 
 import React from "react";
+import CustomCloseSymbol from "./CustomCloseSymbol";
 
 function CustomModalContainer(props) {
   return (
@@ -14,7 +15,9 @@ function CustomModalContainer(props) {
       <CustomButton
         className="to-do-modal-close-button"
         onClick={props.onClose}
-      ></CustomButton>
+      >
+        <CustomCloseSymbol className={`to-do-close-symbol`} />
+      </CustomButton>
       <CustomTextHeading
         className="to-do-edit-text-heading"
         children="Task"

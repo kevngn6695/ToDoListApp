@@ -5,9 +5,9 @@ import React from "react";
 function CustomMenuSymbol(props) {
   return (
     <>
-      <span className={props.className}></span>
-      <span className={props.className}></span>
-      <span className={props.className}></span>
+      <div className={props.className}></div>
+      <div className={props.className}></div>
+      <div className={props.className}></div>
     </>
   );
 }

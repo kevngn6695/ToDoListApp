@@ -18,7 +18,11 @@
 .to-do-modal-close-button{
     right: -10px;
     top: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
 .to-do-menu-button.open, .to-do-menu-button.closed{
   right: 5%;
 }

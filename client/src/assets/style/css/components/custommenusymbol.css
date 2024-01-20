@@ -1,29 +1,29 @@
-span {
+ .to-do-menu-symbol{
     width: 15px;
     height: 20px;
     background-color: #000;
     margin: 1px 0;
     border-radius: 30px;
-    transition: 0.4s;
+    transition: all 0.4s ease-in-out;
   }
 
-.to-do-menu-symbol span:nth-child(1), .to-do-menu-symbol span:nth-child(3) {
+.to-do-menu-symbol:nth-child(1), .to-do-menu-symbol:nth-child(3) {
   width: 10px;
 }
 
-.open span:nth-child(1), .open span:nth-child(3){
+.open .to-do-menu-symbol:nth-child(1),.open .to-do-menu-symbol:nth-child(3){
     width: 8px;
   }
   
-.open span:nth-child(1) {
+.open .to-do-menu-symbol:nth-child(1) {
     transform: rotate(45deg) translate(-1px, 2px);
   } 
   
-.open span:nth-child(2) {
+.open .to-do-menu-symbol:nth-child(2) {
     transform: rotate(-45deg);
   }
   
-.open span:nth-child(3) {
+.open .to-do-menu-symbol:nth-child(3) {
     transform: rotate(45deg) translate(2px, -3px);
   }
 
