@@ -63,18 +63,12 @@ function App() {
       setTime(new Date().toLocaleTimeString([], options));
     }, 1000);
     return () => clearInterval(intervalId);
-  }, []);
+  });
 
   return (
     <div className="App">
       <Header />
       <Body className="to-do-body">
-        <CustomDeleteBin
-          classNameWrapper={`to-do-delete-icon-wrapper ${
-            modalOpen ? "open" : "closed"
-          }`}
-          className="to-do-delete"
-        />
         <CustomMainContainer className="to-do-main-container">
           <CustomMenuContainer className="to-do-menu-container" />
           <CustomDisplayContainer className={`to-do-display-container`}>
@@ -114,6 +108,12 @@ function App() {
             />
           </CustomDisplayContainer>
         </CustomMainContainer>
+        <CustomDeleteBin
+          classNameWrapper={`to-do-delete-icon-wrapper ${
+            modalOpen ? "open" : "closed"
+          }`}
+          className="to-do-delete"
+        />
       </Body>
       <Footer className="to-do-footer-paragraph" currentYear={currentYear} />
     </div>

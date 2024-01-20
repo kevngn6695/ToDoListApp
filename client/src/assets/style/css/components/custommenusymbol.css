@@ -7,9 +7,9 @@ span {
     transition: 0.4s;
   }
 
- span:nth-child(1), span:nth-child(3) {
-    width: 10px;
-  }
+.to-do-menu-symbol span:nth-child(1), .to-do-menu-symbol span:nth-child(3) {
+  width: 10px;
+}
 
 .open span:nth-child(1), .open span:nth-child(3){
     width: 8px;
@@ -26,3 +26,4 @@ span {
 .open span:nth-child(3) {
     transform: rotate(45deg) translate(2px, -3px);
   }
+

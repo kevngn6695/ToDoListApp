@@ -83,7 +83,6 @@
     transition: all 0.5s ease-in-out;
 }
 
-
 /* 
     Modal Container CSS
 */
@@ -94,6 +93,7 @@
     min-height: 400px;
     position: absolute;
     right: -85%;
+    z-index: 9;
     top: -25%;
     transition: all 0.5s ease-in-out;
 }
@@ -106,7 +106,7 @@
     width: 15px;
     height: 1px;
     position: absolute;
-    z-index: 1;
+    z-index: 3;
     background-color: #000;
     transition: all 0.4s ease-in-out;
   }
@@ -117,4 +117,22 @@
   
 .to-do-close-symbol:nth-child(2) {
     transform: rotate(-45deg) translate(-4px,-6px);
+}
+
+.to-do-modal-close-symbol {
+    width: 15px;
+    height: 20px;
+    background-color: #000;
+    /* margin: 1px 0; */
+    border-radius: 30px;
+    /* border: 1px solid #; */
+    /* transition: 0.4s; */
+  }
+  
+.to-do-modal-close-symbol:nth-child(1) {
+    transform: rotate(45deg) translate(-1px, 2px);
+  } 
+  
+.to-do-modal-close-symbol:nth-child(2) {
+    transform: rotate(45deg) translate(2px, -3px);
 }
