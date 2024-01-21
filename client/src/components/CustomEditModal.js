@@ -42,6 +42,7 @@ function CustomEditModal(props) {
   const handleOutsideClick = (e) => {
     if (open && e.target.closest(".to-do-main-container") === null) {
       setOpen(null);
+      props.setModalOpen(false);
     }
   };
 
@@ -81,6 +82,7 @@ function CustomEditModal(props) {
                 className="to-do-modal-container"
                 description={todo.description}
                 onClose={() => setOpen(null)}
+                setModalOpen={props.setModalOpen}
               >
                 {capitalizeFirst(todo.description)}
               </CustomModalContainer>
