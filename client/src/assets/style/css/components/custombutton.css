@@ -1,3 +1,5 @@
+@import url('../fonts/fonts.css');
+
 .to-do-delete-button{
     position: absolute;
     top: 80%;
@@ -36,15 +38,30 @@
   top: 2%;
 }
 
-.to-do-modal-close-button:hover{
+.to-do-modal-close-button:hover, .to-do-edit-button:hover{
   box-shadow: -2px -2px 6px rgba(255, 255, 255, .5),
               -2px -2px 4px rgba(255, 255, 255, 1),
               2px 2px 2px rgba(165, 55, 253, 0.05),
               2px 2px 4px rgba(165, 55, 253, 0.1);
 }
-.to-do-modal-close-button:active{
+.to-do-modal-close-button:active, .to-do-edit-button:active{
   box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 1),
               inset -2px -2px 4px rgba(255, 255, 255, 1),
               inset 2px 2px 2px rgba(255, 255, 255, .075),
               inset 2px 2px 4px rgba(0, 0, 0, .15);
+}
+
+.to-do-edit-button{
+  width: 100px;
+  height: 20px;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(165, 55, 253, 1);
+  color: white;
+  font-family: "Custom_Gelion_Bold";
+  border: none;
+  position: absolute;
+  border-radius: 5px;
+  transition: all 0.5s ease-in-out;
 }

@@ -83,6 +83,7 @@ function CustomEditModal(props) {
                 description={todo.description}
                 onClose={() => setOpen(null)}
                 setModalOpen={props.setModalOpen}
+                todoId={todo.todo_id}
               >
                 {capitalizeFirst(todo.description)}
               </CustomModalContainer>
