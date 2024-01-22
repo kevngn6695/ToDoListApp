@@ -3,16 +3,23 @@
     Display Container CSS
 */
 .to-do-display-container{
-    width: 75%;
     /* border: 1px solid black; */
     position: absolute;
-    left: 25%;
     border-radius: 30px;
     display: flex;
     flex-direction: column;
     /* display: inline-block; */
     height: 100%;
     transition: all 0.5s ease-in-out;
+}
+.to-do-display-container.closed{
+    width: 90%;
+    left: 8%;
+}
+
+.to-do-display-container.open{
+    width: 75%;
+    left: 25%;
 }
 
 .to-do-text-display-container.closed{
@@ -22,7 +29,6 @@
     top: 55%;
     /* border: 1px solid black; */
     transform: translate(0, -50%);
-
 }
 
 .to-do-text-display-container.open{

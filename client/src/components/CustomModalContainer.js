@@ -21,7 +21,7 @@ function CustomModalContainer(props) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
-      window.location = "/";
+      // window.location = "/";
       console.log(props.todoId);
     } catch (err) {
       console.error(err.message);
@@ -55,6 +55,7 @@ function CustomModalContainer(props) {
         type="text"
         placeholder={capitalizeFirst(props.description)}
         onChange={(e) => handleOnChange(e)}
+        onSubmit={(e) => handleUpdateDescription(e)}
       />
 
       <CustomButton

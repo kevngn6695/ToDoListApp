@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "../assets/style/css/components/customcontainer.css";
 
@@ -6,47 +6,51 @@ import CustomMenuSymbol from "./CustomMenuSymbol.js";
 import CustomButton from "./CustomButton.js";
 import CustomTextHeading from "./CustomTextHeading.js";
 import CustomTextInput from "./CustomTextInput.js";
+import CustomDeleteBin from "./CustomDeleteBin.js";
 
 function CustomMenuContainer(props) {
-  const [isMenuOpen, setMenuOpen] = useState(false);
-
-  const handleMenuOpen = () => {
-    setMenuOpen(!isMenuOpen);
-  };
-
   return (
-    <div className={`${props.className} ${isMenuOpen ? "open" : "closed"}`}>
+    <div
+      className={`${props.className} ${props.isMenuOpen ? "open" : "closed"}`}
+    >
       <CustomButton
-        className={`to-do-menu-button ${isMenuOpen ? "open" : "closed"}`}
-        onClick={handleMenuOpen}
+        className={`to-do-menu-button ${props.isMenuOpen ? "open" : "closed"}`}
+        onClick={props.onClick}
       >
         <CustomMenuSymbol className={`to-do-menu-symbol`} />
       </CustomButton>
-      {isMenuOpen && (
+      {props.isMenuOpen && (
         <>
           <CustomTextHeading
             className={`to-do-menu-text-heading ${
-              isMenuOpen ? "open" : "closed"
+              props.isMenuOpen ? "open" : "closed"
             }`}
             children="Menu"
             h1
           />
           <CustomTextInput
             classNameForm={`to-do-menu-text-input-form ${
-              isMenuOpen ? "open" : "closed"
+              props.isMenuOpen ? "open" : "closed"
             }`}
             classNameInput={`to-do-menu-text-input ${
-              isMenuOpen ? "open" : "closed"
+              props.isMenuOpen ? "open" : "closed"
             }`}
             type="text"
             placeholder="Rearch"
           />
           <CustomTextHeading
             className={`to-do-menu-tasks-text-heading ${
-              isMenuOpen ? "open" : "closed"
+              props.isMenuOpen ? "open" : "closed"
             }`}
             children={`TASKS`}
             h6
+          />
+
+          <CustomDeleteBin
+            classNameWrapper={`to-do-delete-icon-wrapper ${
+              props.modalOpen ? "open" : "closed"
+            }`}
+            className="to-do-delete"
           />
         </>
       )}

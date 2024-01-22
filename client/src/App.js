@@ -10,7 +10,6 @@ import CustomDisplayContainer from "./components/CustomDisplayContainer.js";
 import CustomTextHeading from "./components/CustomTextHeading.js";
 import CustomTextInput from "./components/CustomTextInput.js";
 import CustomTextDisplay from "./components/CustomTextDisplay.js";
-import CustomDeleteBin from "./components/CustomDeleteBin.js";
 
 import React, { useState, useEffect } from "react";
 
@@ -29,6 +28,7 @@ function App() {
   const [date, setDate] = useState(newDate);
   const [time, setTime] = useState(newTime);
   const [modalOpen, setModalOpen] = useState(null);
+  const [isMenuOpen, setMenuOpen] = useState(false);
 
   // Day
   const dateStr = date.toLocaleDateString();
@@ -57,11 +57,15 @@ function App() {
     }
   };
 
+  const handleMenuOpen = () => {
+    setMenuOpen(!isMenuOpen);
+  };
+
   useEffect(() => {
     const intervalId = setInterval(() => {
       setDate(new Date());
       setTime(new Date().toLocaleTimeString([], options));
-    }, 1000);
+    }, 500);
     return () => clearInterval(intervalId);
   });
 
@@ -70,8 +74,17 @@ function App() {
       <Header />
       <Body className="to-do-body">
         <CustomMainContainer className="to-do-main-container">
-          <CustomMenuContainer className="to-do-menu-container" />
-          <CustomDisplayContainer className={`to-do-display-container`}>
+          <CustomMenuContainer
+            className="to-do-menu-container"
+            onClick={handleMenuOpen}
+            isMenuOpen={isMenuOpen}
+            modalOpen={modalOpen}
+          />
+          <CustomDisplayContainer
+            className={`to-do-display-container ${
+              isMenuOpen ? "open" : "closed"
+            }`}
+          >
             <CustomTextHeading
               className="to-do-main-text-heading-week-day"
               children={today}
@@ -108,12 +121,6 @@ function App() {
             />
           </CustomDisplayContainer>
         </CustomMainContainer>
-        <CustomDeleteBin
-          classNameWrapper={`to-do-delete-icon-wrapper ${
-            modalOpen ? "open" : "closed"
-          }`}
-          className="to-do-delete"
-        />
       </Body>
       <Footer className="to-do-footer-paragraph" currentYear={currentYear} />
     </div>

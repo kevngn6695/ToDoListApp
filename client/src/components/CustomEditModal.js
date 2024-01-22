@@ -29,16 +29,6 @@ function CustomEditModal(props) {
     }
   };
 
-  useEffect(() => {
-    const id = setInterval(() => {
-      getTodo();
-    }, 100);
-
-    return () => {
-      clearInterval(id);
-    };
-  }, [todos]);
-
   const handleOutsideClick = (e) => {
     if (open && e.target.closest(".to-do-main-container") === null) {
       setOpen(null);
@@ -57,6 +47,16 @@ function CustomEditModal(props) {
       document.removeEventListener("click", handleOutsideClick);
     };
   }, [open]);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      getTodo();
+    }, 1000);
+
+    return () => {
+      clearInterval(id);
+    };
+  }, [todos]);
 
   return (
     <>
