@@ -1,29 +1,30 @@
 @import url('../fonts/fonts.css');
 
-.to-do-delete-button{
-    position: absolute;
-    top: 80%;
-
-}
-.to-do-modal-close-button, .to-do-menu-button{
-  background-color: white;
-  width: 30px;
-  height: 30px;
+/* 
+  Multiple same attributes
+*/
+.to-do-delete-button, .to-do-modal-close-button, .to-do-menu-button, .to-do-edit-button{
   position: absolute;
-  border-radius: 50%;
+  font-family: "Custom_Gelion_Bold";
+}
+
+.to-do-delete-button,.to-do-modal-close-button, .to-do-menu-button, .to-do-edit-button{
   border: none;
   outline: none;
-  cursor: pointer;
-  transition: all .2s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
-.to-do-modal-close-button{
-    right: -10px;
-    top: -10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* 
+  Delete Button
+*/
+
+.to-do-delete-button{
+    top: 80%;
 }
+
+/* 
+  Menu Button
+*/
 
 .to-do-menu-button.open, .to-do-menu-button.closed{
   right: 5%;
@@ -31,11 +32,28 @@
 
 .to-do-menu-button{
   flex-direction: column;
+  padding: 10px;
+  top: 2%;
+}
+
+/* 
+  Modal Button
+*/
+
+.to-do-modal-close-button, .to-do-menu-button{
+  background-color: white;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  top: 2%;
+}
+
+.to-do-modal-close-button{
+  right: -10px;
+  top: -10px;
 }
 
 .to-do-modal-close-button:hover, .to-do-edit-button:hover{
@@ -51,6 +69,10 @@
               inset 2px 2px 4px rgba(0, 0, 0, .15);
 }
 
+/* 
+  Edit Button
+*/
+
 .to-do-edit-button{
   width: 100px;
   height: 20px;
@@ -59,9 +81,5 @@
   transform: translate(-50%, -50%);
   background-color: rgba(165, 55, 253, 1);
   color: white;
-  font-family: "Custom_Gelion_Bold";
-  border: none;
-  position: absolute;
   border-radius: 5px;
-  transition: all 0.5s ease-in-out;
 }

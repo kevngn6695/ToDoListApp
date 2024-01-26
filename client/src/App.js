@@ -13,7 +13,10 @@ import CustomTextDisplay from "./components/CustomTextDisplay.js";
 
 import React, { useState, useEffect } from "react";
 
+import PropTypes from "prop-types";
+
 function App() {
+  // Initialize weekday and time objects
   const dayNames = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
   const options = {
     hour: "numeric",
@@ -21,27 +24,29 @@ function App() {
     hour12: false,
   };
 
+  // Create a new instance for date and time
   const newDate = new Date();
   const newTime = new Date().toLocaleTimeString([], options);
 
   const [description, setDescription] = useState(""); // Initialize the state for manipulating descriptions from the api
-  const [date, setDate] = useState(newDate);
-  const [time, setTime] = useState(newTime);
-  const [modalOpen, setModalOpen] = useState(null);
-  const [isMenuOpen, setMenuOpen] = useState(false);
+  const [date, setDate] = useState(newDate); // Initialize the state for date
+  const [time, setTime] = useState(newTime); // Initialize the state for time
+  const [modalOpen, setModalOpen] = useState(null); // Initialize the state for openning modal
+  const [isMenuOpen, setMenuOpen] = useState(false); // Initialize the state for openning menu
 
-  // Day
+  // Create a weekday
   const dateStr = date.toLocaleDateString();
   const currentYear = date.getFullYear();
   const dayIdx = date.getDay();
   const today = dayNames[dayIdx];
 
-  // Time
+  // Handle changing the description
   const handleOnChange = (e) => {
     setDescription(e.target.value);
   };
 
-  const handleOnSubmit = async (e) => {
+  // Handle create a new task
+  const handleCreateTask = async (e) => {
     try {
       e.preventDefault();
       const body = { description };
@@ -57,15 +62,17 @@ function App() {
     }
   };
 
+  // Handle menu open
   const handleMenuOpen = () => {
     setMenuOpen(!isMenuOpen);
   };
 
+  // Use apply effects
   useEffect(() => {
     const intervalId = setInterval(() => {
       setDate(new Date());
       setTime(new Date().toLocaleTimeString([], options));
-    }, 500);
+    }, 100);
     return () => clearInterval(intervalId);
   });
 
@@ -108,7 +115,7 @@ function App() {
               type="text"
               placeholder="Add a task"
               onChange={handleOnChange}
-              onSubmit={handleOnSubmit}
+              onSubmit={handleCreateTask}
               description={description}
             />
             <CustomTextDisplay
@@ -126,5 +133,23 @@ function App() {
     </div>
   );
 }
+
+// Checking type for props.
+App.propTypes = {
+  className: PropTypes.string,
+  classNameForm: PropTypes.string,
+  classNameInput: PropTypes.string,
+  classNameContainer: PropTypes.string,
+  classNameModal: PropTypes.string,
+  placeholder: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired,
+  description: PropTypes.string,
+  currentYear: PropTypes.number,
+  isMenuOpen: PropTypes.bool,
+  children: PropTypes.node,
+  onChange: PropTypes.func,
+  onClick: PropTypes.func,
+  onSubmit: PropTypes.func,
+};
 
 export default React.memo(App);
