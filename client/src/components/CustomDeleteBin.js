@@ -7,6 +7,8 @@ import React, { useState } from "react";
 // import recycleBinHover from "../assets/media/images/icons/json/recycle-bin.json";
 import deleteIcon from "../assets/media/images/icons/icons/delete.png";
 
+import PropTypes from "prop-types";
+
 function CustomDeleteBin(props) {
   const [todos, setTodo] = useState([]);
   const [isDraggable, setIsDraggable] = useState(false);
@@ -60,5 +62,10 @@ function CustomDeleteBin(props) {
     </div>
   );
 }
+
+CustomDeleteBin.propTypes = {
+  className: PropTypes.string,
+  classNameWrapper: PropTypes.string,
+};
 
 export default React.memo(CustomDeleteBin);

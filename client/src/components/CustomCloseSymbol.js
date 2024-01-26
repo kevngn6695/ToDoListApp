@@ -2,6 +2,8 @@ import React from "react";
 
 import "../assets/style/css/components/customclosesymbol.css";
 
+import PropTypes from "prop-types";
+
 function CustomCloseSymbol(props) {
   return (
     <>
@@ -10,5 +12,9 @@ function CustomCloseSymbol(props) {
     </>
   );
 }
+
+CustomCloseSymbol.propTypes = {
+  className: PropTypes.string,
+};
 
 export default React.memo(CustomCloseSymbol);

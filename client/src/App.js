@@ -13,8 +13,6 @@ import CustomTextDisplay from "./components/CustomTextDisplay.js";
 
 import React, { useState, useEffect } from "react";
 
-import PropTypes from "prop-types";
-
 function App() {
   // Initialize weekday and time objects
   const dayNames = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
@@ -133,23 +131,5 @@ function App() {
     </div>
   );
 }
-
-// Checking type for props.
-App.propTypes = {
-  className: PropTypes.string,
-  classNameForm: PropTypes.string,
-  classNameInput: PropTypes.string,
-  classNameContainer: PropTypes.string,
-  classNameModal: PropTypes.string,
-  placeholder: PropTypes.string.isRequired,
-  type: PropTypes.string.isRequired,
-  description: PropTypes.string,
-  currentYear: PropTypes.number,
-  isMenuOpen: PropTypes.bool,
-  children: PropTypes.node,
-  onChange: PropTypes.func,
-  onClick: PropTypes.func,
-  onSubmit: PropTypes.func,
-};
 
 export default React.memo(App);

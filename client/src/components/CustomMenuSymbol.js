@@ -2,6 +2,8 @@ import "../assets/style/css/components/custommenusymbol.css";
 
 import React from "react";
 
+import PropTypes from "prop-types";
+
 function CustomMenuSymbol(props) {
   return (
     <>
@@ -12,4 +14,7 @@ function CustomMenuSymbol(props) {
   );
 }
 
+CustomMenuSymbol.propTypes = {
+  className: PropTypes.string,
+};
 export default React.memo(CustomMenuSymbol);

@@ -6,6 +6,8 @@ import React, { useEffect, useState } from "react";
 
 import { capitalizeFirst } from "../services/capitalizeFirst";
 
+import PropTypes from "prop-types";
+
 function CustomEditModal(props) {
   const [todos, setTodo] = useState([]);
   const [open, setOpen] = useState(null);
@@ -95,4 +97,10 @@ function CustomEditModal(props) {
   );
 }
 
+CustomEditModal.propTypes = {
+  className: PropTypes.string,
+  classNameContainer: PropTypes.string,
+  classNameModal: PropTypes.string,
+  setModalOpen: PropTypes.func,
+};
 export default React.memo(CustomEditModal);
