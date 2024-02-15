@@ -2,7 +2,7 @@ import "../assets/style/css/main/footer.css";
 
 import React from "react";
 
-import PropTypes from "prop-types";
+import { FooterProps } from "../utils/propType";
 
 function Footer(props) {
   return (
@@ -14,8 +14,6 @@ function Footer(props) {
   );
 }
 
-Footer.propTypes = {
-  className: PropTypes.string,
-};
+Footer.propTypes = FooterProps;
 
 export default React.memo(Footer);

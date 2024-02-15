@@ -14,6 +14,7 @@
 
 .to-do-text-display-container.open, .to-do-text-display-container.closed{
     min-height: 300px;
+    top: 55%;
     transform: translate(0, -50%);
 }
 
@@ -45,12 +46,10 @@
 
 .to-do-text-display-container.closed{
     width: 95%;
-    top: 55%;
 }
 
 .to-do-text-display-container.open{
     width: 50%;
-    top: 55%;
 }
 
 /* 

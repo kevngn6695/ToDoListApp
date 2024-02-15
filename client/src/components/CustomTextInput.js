@@ -2,7 +2,7 @@ import "../assets/style/css/components/customtextinput.css";
 
 import React from "react";
 
-import PropTypes from "prop-types";
+import { CustomTextInputProps } from "../utils/propType";
 
 function CustomTextInput(props) {
   return (
@@ -19,14 +19,6 @@ function CustomTextInput(props) {
   );
 }
 
-CustomTextInput.propTypes = {
-  classNameForm: PropTypes.string,
-  classNameInput: PropTypes.string,
-  type: PropTypes.string.isRequired,
-  placeholder: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
-  onChange: PropTypes.func,
-  onSubmit: PropTypes.func,
-};
+CustomTextInput.propTypes = CustomTextInputProps;
 
 export default React.memo(CustomTextInput);

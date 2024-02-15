@@ -9,7 +9,7 @@ import { capitalizeFirst } from "../services/capitalizeFirst";
 
 import React, { useState } from "react";
 
-import PropTypes from "prop-types";
+import { CustomModalContainerProps } from "../utils/propType";
 
 function CustomModalContainer(props) {
   const [description, setDescription] = useState(props.description);
@@ -70,12 +70,6 @@ function CustomModalContainer(props) {
   );
 }
 
-CustomModalContainer.propTypes = {
-  className: PropTypes.string,
-  description: PropTypes.string,
-  todoId: PropTypes.number,
-  onClick: PropTypes.func,
-  setModalOpen: PropTypes.func,
-};
+CustomModalContainer.propTypes = CustomModalContainerProps;
 
 export default React.memo(CustomModalContainer);

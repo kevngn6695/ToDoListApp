@@ -2,14 +2,11 @@ import "../assets/style/css/components/customcontainer.css";
 
 import React from "react";
 
-import PropTypes from "prop-types";
+import { CustomDisplayContainerProps } from "../utils/propType";
 
 function CustomDisplayContainer(props) {
   return <section className={props.className}>{props.children}</section>;
 }
 
-CustomDisplayContainer.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-};
+CustomDisplayContainer.propTypes = CustomDisplayContainerProps;
 export default React.memo(CustomDisplayContainer);

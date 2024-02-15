@@ -2,14 +2,11 @@ import "../assets/style/css/components/customcontainer.css";
 
 import React from "react";
 
-import PropTypes from "prop-types";
+import { CustomMainContainerProps } from "../utils/propType";
 
 function CustomMainContainer(props) {
   return <section className={props.className}>{props.children}</section>;
 }
 
-CustomMainContainer.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
-};
+CustomMainContainer.propTypes = CustomMainContainerProps;
 export default React.memo(CustomMainContainer);

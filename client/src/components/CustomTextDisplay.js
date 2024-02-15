@@ -4,7 +4,7 @@ import CustomEditModal from "./CustomEditModal";
 
 import React from "react";
 
-import PropTypes from "prop-types";
+import { CustomTextDisplayProps } from "../utils/propType";
 
 function CustomTextDisplay(props) {
   return (
@@ -17,11 +17,6 @@ function CustomTextDisplay(props) {
   );
 }
 
-CustomTextDisplay.propTypes = {
-  className: PropTypes.string,
-  classNameModal: PropTypes.string,
-  modalOpen: PropTypes.bool,
-  // setModalOpen: PropTypes.func,
-};
+CustomTextDisplay.propTypes = CustomTextDisplayProps;
 
 export default React.memo(CustomTextDisplay);

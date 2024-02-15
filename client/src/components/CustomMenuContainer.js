@@ -8,7 +8,9 @@ import CustomTextHeading from "./CustomTextHeading.js";
 import CustomTextInput from "./CustomTextInput.js";
 import CustomDeleteBin from "./CustomDeleteBin.js";
 
-import PropTypes from "prop-types";
+// import PropTypes from "prop-types";
+
+import { CustomMenuContainerProps } from "../utils/propType.js";
 
 function CustomMenuContainer(props) {
   return (
@@ -60,11 +62,5 @@ function CustomMenuContainer(props) {
   );
 }
 
-CustomMenuContainer.propTypes = {
-  className: PropTypes.string,
-  isMenuOpen: PropTypes.bool,
-  modalOpen: PropTypes.bool,
-  onClick: PropTypes.func,
-};
-
+CustomMenuContainer.propTypes = CustomMenuContainerProps;
 export default React.memo(CustomMenuContainer);
