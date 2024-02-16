@@ -1,54 +1,79 @@
+/* 
+    Font Imports 
+    - Imports custom fonts from external CSS files.
+*/
 @import url('../fonts/fonts.css');
 @import url('../animations/animations.css');
 
-h1,h2,h3,h4,h5,h6{
+/* 
+    Header Styles 
+    - Applies custom fonts to header elements.
+*/
+h1, h2, h3, h4, h5, h6 {
     font-family: "Custom_Gelion_Bold"; 
 }
 
-::selection{
+/* 
+    Text Selection Styles 
+    - Defines styles for selected text.
+*/
+::selection {
     color: white;
     background-color: rgba(165, 55, 253, .5);
 }
 
-.to-do-main-text-heading-week-day, .to-do-menu-text-heading, .to-do-edit-text-heading, .to-do-menu-tasks-text-heading, .to-do-main-text-heading-date, .to-do-main-text-heading-time{
+/* 
+    Text Heading Styles 
+    - Positions and styles various text headings.
+    - Prevents text selection and specifies cursor type.
+*/
+.to-do-main-text-heading-week-day {
     position: absolute;
+    top: 2.5%;
+    font-size: 35px;
     cursor: default;
     user-select: none;
 }
 
-.to-do-main-text-heading-week-day{
-    top: 2.5%;
-    font-size: 35px;
-}
-
-.to-do-main-text-heading-date, .to-do-main-text-heading-time{
+.to-do-main-text-heading-date,
+.to-do-main-text-heading-time {
+    position: absolute;
     left: 9%;
     font-size: 12px;   
     font-family: "Custom_Gelion";
     font-weight: 100;
+    cursor: default;
+    user-select: none;
 }
 
-.to-do-main-text-heading-time{
+.to-do-main-text-heading-time {
     top: 5%;
 }
 
-.to-do-main-text-heading-date{
+.to-do-main-text-heading-date {
     top: 7.5%;
 }
 
-.to-do-menu-text-heading,.to-do-edit-text-heading{
+.to-do-menu-text-heading,
+.to-do-edit-text-heading {
+    position: absolute;
     left: 5%;
     top: 2.5%;
-    /* font-size: 20px; */
+    cursor: default;
+    user-select: none;
 }
 
-.to-do-menu-text-heading.open, .to-do-menu-tasks-text-heading.open{
+.to-do-menu-text-heading.open,
+.to-do-menu-tasks-text-heading.open {
     -webkit-animation: 2s ease 0s normal forwards 1 fadein;
     animation: 2s ease 0s normal forwards 1 fadein;
 }
 
-.to-do-menu-tasks-text-heading{
+.to-do-menu-tasks-text-heading {
+    position: absolute;
     left: 6.5%;
     top: 20%;
     font-size: 8px;
+    cursor: default;
+    user-select: none;
 }

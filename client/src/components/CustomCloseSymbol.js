@@ -1,10 +1,15 @@
+// Importing React for JSX syntax and basic functionality.
 import React from "react";
 
+// Importing the custom close symbol styles from the CSS file.
 import "../assets/style/css/components/customclosesymbol.css";
 
-import PropTypes from "prop-types";
+// Importing PropTypes for defining the type of props.
+import { CustomCloseSymbolProps } from "../utils/propType";
 
+// Functional component for rendering a custom close symbol.
 function CustomCloseSymbol(props) {
+  // Rendering two div elements with the provided className.
   return (
     <>
       <div className={props.className}></div>
@@ -13,8 +18,8 @@ function CustomCloseSymbol(props) {
   );
 }
 
-CustomCloseSymbol.propTypes = {
-  className: PropTypes.string,
-};
+// Prop type validation for CustomCloseSymbol component.
+CustomCloseSymbol.propTypes = CustomCloseSymbolProps;
 
+// Exporting the CustomCloseSymbol component wrapped in React.memo for performance optimization.
 export default React.memo(CustomCloseSymbol);

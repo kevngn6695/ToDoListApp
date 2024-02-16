@@ -4,7 +4,7 @@ const cors = require("cors");
 const bodyParser = require("body-parser");
 const path = require("path");
 const axios = require("axios");
-const pool = require("./database/db");
+const pool = require("../database/db");
 
 /* Set port number to connect server with client */
 const port = process.env.PORT || 5000;

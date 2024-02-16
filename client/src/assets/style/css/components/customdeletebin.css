@@ -1,4 +1,16 @@
-.to-do-delete-icon-wrapper{
+/* Styling for the delete icon */
+.to-do-delete-icon {
+    width: 10px;
+    position: absolute;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    user-select: none;
+    transform: translate(-50%,-50%);
+}
+
+/* Styling for the wrapper of the delete icon */
+.to-do-delete-icon-wrapper {
     width: 200px;
     height: 30px;
     border-radius: 10px;
@@ -9,27 +21,18 @@
     z-index: 1;
     transform: translate(-50%, -50%);
     background-color: white;
-    transition: all 0.5s ease-in-out;   
+    transition: all 0.5s ease-in-out;
 }
 
-.to-do-delete-icon-wrapper.open{
+/* Styling for the wrapper when it's open or closed */
+.to-do-delete-icon-wrapper.closed {
+    right: 10%;
+}
+.to-do-delete-icon-wrapper.open {
     right: 37.5%;
 }
 
-.to-do-delete-icon-wrapper.closed{
-    right: 10%;
-}
-
-.draggable,.to-do-delete-icon-wrapper:hover{
+/* Styling for the wrapper when it's draggable or hovered */
+.draggable, .to-do-delete-icon-wrapper:hover {
     box-shadow: 0px 1px 10px 4px rgba(165, 55, 253, 0.5);
-}
-
-.to-do-delete-icon{
-    width: 10px;
-    position: absolute;
-    background-color: white;
-    top: 50%;
-    left: 50%;
-    user-select: none;
-    transform: translate(-50%,-50%);
 }

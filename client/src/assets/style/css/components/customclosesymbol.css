@@ -1,14 +1,13 @@
-/* 
-    Close Symbol
-*/
+/* Close Symbol */
 .to-do-close-symbol {
     width: 50%;
     height: 1px;
     position: absolute;
     border-radius: 30px;
-    background-color:black;
+    background-color: black;
 }
 
+/* Styling for the diagonal lines of the close symbol */
 .to-do-close-symbol:nth-child(1) {
     transform: rotate(45deg);
 }

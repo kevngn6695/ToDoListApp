@@ -1,9 +1,15 @@
+// Importing CSS file for styling
 import "./assets/style/css/main/app.css";
 
+// Importing React and necessary hooks
+import React, { useState, useEffect } from "react";
+
+// Importing main components
 import Header from "./components/Header.js";
 import Body from "./components/Body.js";
 import Footer from "./components/Footer.js";
 
+// Import essential components for customization
 import CustomMainContainer from "./components/CustomMainContainer.js";
 import CustomMenuContainer from "./components/CustomMenuContainer.js";
 import CustomDisplayContainer from "./components/CustomDisplayContainer.js";
@@ -11,8 +17,10 @@ import CustomTextHeading from "./components/CustomTextHeading.js";
 import CustomTextInput from "./components/CustomTextInput.js";
 import CustomTextDisplay from "./components/CustomTextDisplay.js";
 
-import React, { useState, useEffect } from "react";
-
+/**
+ * Main component representing the To-Do list application.
+ * @returns the view of the To-Do list application.
+ */
 function App() {
   // Initialize weekday and time objects
   const dayNames = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
@@ -26,6 +34,7 @@ function App() {
   const newDate = new Date();
   const newTime = new Date().toLocaleTimeString([], options);
 
+  // State for managing application data
   const [description, setDescription] = useState(""); // Initialize the state for manipulating descriptions from the api
   const [date, setDate] = useState(newDate); // Initialize the state for date
   const [time, setTime] = useState(newTime); // Initialize the state for time
@@ -38,12 +47,17 @@ function App() {
   const dayIdx = date.getDay();
   const today = dayNames[dayIdx];
 
-  // Handle changing the description
+  // Event handler for changing the description of the task
   const handleOnChange = (e) => {
     setDescription(e.target.value);
   };
 
-  // Handle create a new task
+  // Event handler for toggling menu
+  const handleMenuOpen = () => {
+    setMenuOpen(!isMenuOpen);
+  };
+
+  // Event handler for creating a new task
   const handleCreateTask = async (e) => {
     try {
       e.preventDefault();
@@ -60,20 +74,16 @@ function App() {
     }
   };
 
-  // Handle menu open
-  const handleMenuOpen = () => {
-    setMenuOpen(!isMenuOpen);
-  };
-
-  // Use apply effects
+  // Effect hook for updating date and time continuously
   useEffect(() => {
     const intervalId = setInterval(() => {
       setDate(new Date());
       setTime(new Date().toLocaleTimeString([], options));
     }, 100);
-    return () => clearInterval(intervalId);
-  });
+    return () => clearInterval(intervalId); // Cleanup on component unmount
+  }); // Empty dependency array ensures the effect runs only once
 
+  // Rendering the application UI
   return (
     <div className="App">
       <Header />

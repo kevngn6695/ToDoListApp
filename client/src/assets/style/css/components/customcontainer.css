@@ -1,61 +1,86 @@
 /* 
-    Multiple same attribute
+    Container Styles
+    - Defines common styles for various container elements.
+    - Includes position, background color, border radius, and transition effects.
 */
-.to-do-display-container,.to-do-text-display-container.closed,.to-do-text-display-container.open,.to-do-main-container,.to-do-menu-container,.to-do-modal-container{
+.to-do-display-container,
+.to-do-text-display-container.closed,
+.to-do-text-display-container.open,
+.to-do-main-container,
+.to-do-menu-container,
+.to-do-modal-container {
     position: absolute;
     background-color: white;
     border-radius: 10px;
     transition: all 0.5s ease-in-out;
 }
 
-.to-do-display-container,.to-do-menu-container{
+/* 
+    Flex Display Containers
+    - Styles for containers using flex display.
+*/
+.to-do-display-container,
+.to-do-menu-container {
     display: flex;
 }
 
-.to-do-text-display-container.open, .to-do-text-display-container.closed{
+/* 
+    Text Display Container Styles
+    - Defines styles for text display containers in open and closed states.
+*/
+.to-do-text-display-container.open,
+.to-do-text-display-container.closed {
     min-height: 300px;
     top: 55%;
     transform: translate(0, -50%);
 }
 
-.to-do-modal-container:hover,.to-do-menu-container:hover,.to-do-main-container{
+/* 
+    Hover Effects
+    - Styling for hover effects on modal, menu, and main containers.
+*/
+.to-do-modal-container:hover,
+.to-do-menu-container:hover,
+.to-do-main-container {
     box-shadow: 0px 10px 20px 7px rgba(165, 55, 253, 0.1);
 }
 
-/*
-    Display Container
+/* 
+    Display Container Styles
+    - Defines styles for the main display container in open and closed states.
 */
-.to-do-display-container{
+.to-do-display-container {
     flex-direction: column;
     height: 100%;
 }
 
-.to-do-display-container.closed{
+.to-do-display-container.closed {
     width: 90%;
     left: 8%;
 }
 
-.to-do-display-container.open{
+.to-do-display-container.open {
     width: 75%;
     left: 25%;
 }
 
 /* 
-    Text Display Container
+    Text Display Container Styles
+    - Defines styles for text display containers in open and closed states.
 */
-
-.to-do-text-display-container.closed{
+.to-do-text-display-container.closed {
     width: 95%;
 }
 
-.to-do-text-display-container.open{
+.to-do-text-display-container.open {
     width: 50%;
 }
 
 /* 
-    Main Container
+    Main Container Styles
+    - Defines styles for the main container element.
 */
-.to-do-main-container{
+.to-do-main-container {
     width: 90%;
     min-height: 450px;
     top: 50%;
@@ -63,14 +88,15 @@
     transform: translate(-50%, -50%);
 }
 
-.to-do-main-container:hover{
+.to-do-main-container:hover {
     box-shadow: 0px 1px 25px 7px rgba(165, 55, 253, 0.3);
 }
 
 /* 
-    Menu Container
+    Menu Container Styles
+    - Defines styles for the menu container element.
 */
-.to-do-menu-container{
+.to-do-menu-container {
     width: 20%;
     min-height: 425px;
     top: 2.5%;
@@ -79,14 +105,19 @@
     align-items: center;
 }
 
-.closed{
+/* 
+    Closed State Styles
+    - Styles for the closed state of containers.
+*/
+.closed {
     width: 3%;
 }
 
 /* 
-    Modal Container
+    Modal Container Styles
+    - Defines styles for the modal container element.
 */
-.to-do-modal-container{
+.to-do-modal-container {
     width: 300px;
     min-height: 400px;
     right: -85%;

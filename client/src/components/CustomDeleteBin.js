@@ -1,30 +1,34 @@
+// Importing the custom delete bin styles from the CSS file.
 import "../assets/style/css/components/customdeletebin.css";
 
+// Importing React for JSX syntax and basic functionality, and useState hook for managing component state.
 import React, { useState } from "react";
 
-// import Lottie from "react-lottie";
+// Importing PropTypes for defining the type of props.
+import { CustomDeleteBinProps } from "../utils/propType";
 
-// import recycleBinHover from "../assets/media/images/icons/json/recycle-bin.json";
+// Importing the delete icon image.
 import deleteIcon from "../assets/media/images/icons/icons/delete.png";
 
-import PropTypes from "prop-types";
-
+// Functional component for rendering a custom delete bin.
 function CustomDeleteBin(props) {
+  // State variables for managing todos and draggable state.
   const [todos, setTodo] = useState([]);
   const [isDraggable, setIsDraggable] = useState(false);
 
+  // Function to delete an item from todos.
   const handelDeleteItem = async (id) => {
     try {
       await fetch(`http://localhost:5000/todos/${id}`, {
         method: "DELETE",
       });
-
       setTodo(todos.filter((todo) => todo.id !== id));
     } catch (err) {
       console.error(err.message);
     }
   };
 
+  // Functions for handling drag and drop events.
   const handleDragOver = (e) => {
     e.preventDefault();
     setIsDraggable(true);
@@ -41,12 +45,7 @@ function CustomDeleteBin(props) {
     setIsDraggable(false);
   };
 
-  // const defaultOptions = {
-  //   loop: false,
-  //   autoplay: false,
-  //   animationData: recycleBinHover,
-  // };
-
+  // Rendering the delete bin with appropriate styling and event handlers.
   return (
     <div
       className={`${props.classNameWrapper} ${isDraggable ? "draggable" : ""}`}
@@ -57,15 +56,14 @@ function CustomDeleteBin(props) {
         onDragLeave={handleDragLeave}
         onDrop={handleDragDrop}
       >
-        <img className="to-do-delete-icon" src={deleteIcon} />
+        {/* Displaying the delete icon */}
+        <img className="to-do-delete-icon" src={deleteIcon} alt="Delete" />
       </div>
     </div>
   );
 }
 
-CustomDeleteBin.propTypes = {
-  className: PropTypes.string,
-  classNameWrapper: PropTypes.string,
-};
-
+// Prop type validation for CustomDeleteBin component.
+CustomDeleteBin.propTypes = CustomDeleteBinProps;
+// Exporting the CustomDeleteBin component wrapped in React.memo for performance optimization.
 export default React.memo(CustomDeleteBin);
