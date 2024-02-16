@@ -5,6 +5,17 @@ export const HeaderProps = {
   children: PropTypes.node,
 };
 
+export const BodyProps = {
+  className: PropTypes.string,
+  children: PropTypes.node,
+};
+
+export const CustomButtonProps = {
+  className: PropTypes.string,
+  onClick: PropTypes.func,
+  children: PropTypes.node,
+};
+
 export const CustomDisplayContainerProps = {
   className: PropTypes.string,
   children: PropTypes.node,

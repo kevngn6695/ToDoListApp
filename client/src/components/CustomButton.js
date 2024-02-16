@@ -2,7 +2,7 @@ import "../assets/style/css/components/custombutton.css";
 
 import React from "react";
 
-import PropTypes from "prop-types";
+import { CustomButtonProps } from "../utils/propType";
 
 function CustomButton(props) {
   return (
@@ -12,10 +12,6 @@ function CustomButton(props) {
   );
 }
 
-CustomButton.propTypes = {
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-  children: PropTypes.node,
-};
+CustomButton.propTypes = CustomButtonProps;
 
 export default React.memo(CustomButton);
