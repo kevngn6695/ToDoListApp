@@ -68,6 +68,11 @@ function App() {
         body: JSON.stringify(body),
       });
 
+      // Clear input field after successful submission
+      if (res.ok) {
+        setDescription("");
+      }
+
       console.log(res);
     } catch (err) {
       console.err(err.message);

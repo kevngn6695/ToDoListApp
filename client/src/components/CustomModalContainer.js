@@ -26,11 +26,19 @@ function CustomModalContainer(props) {
     e.preventDefault();
     try {
       const body = { description };
-      await fetch(`http://localhost:5000/todos/${props.todoId}`, {
+      const res = await fetch(`http://localhost:5000/todos/${props.todoId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
+
+      // Reset description state and close modal after successful update
+      if (res.ok) {
+        setDescription(""); // Reset description state
+        props.onClose(); // Close modal
+        props.setModalOpen(false); // Close modal
+      }
+
       // window.location = "/";
       console.log(props.todoId);
     } catch (err) {
