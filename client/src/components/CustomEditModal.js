@@ -2,7 +2,7 @@ import "../assets/style/css/components/customeditmodal.css";
 
 import CustomModalContainer from "./CustomModalContainer";
 
-import React, { useEffect, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 
 import { capitalizeFirst } from "../services/capitalizeFirst";
 
@@ -72,13 +72,15 @@ function CustomEditModal(props) {
               draggable
               key={todo.todo_id}
             >
-              {capitalizeFirst(todo.description)}
+              <div className={props.classNameDescriptionContainer}>
+                {capitalizeFirst(todo.description)}
+              </div>
             </div>
           </div>
         ))}
 
         {todos.map((todo) => (
-          <React.Fragment key={todo.todo_id}>
+          <Fragment key={todo.todo_id}>
             {open === todo.todo_id && (
               <CustomModalContainer
                 className="to-do-modal-container"
@@ -90,7 +92,7 @@ function CustomEditModal(props) {
                 {capitalizeFirst(todo.description)}
               </CustomModalContainer>
             )}
-          </React.Fragment>
+          </Fragment>
         ))}
       </div>
     </>

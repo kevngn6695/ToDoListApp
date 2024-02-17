@@ -132,6 +132,7 @@ function App() {
               description={description}
             />
             <CustomTextDisplay
+              classNameDescriptionContainer={`to-do-description-container`}
               classNameContainer={`to-do-text-display-container ${
                 modalOpen ? "open" : "closed"
               }`}
