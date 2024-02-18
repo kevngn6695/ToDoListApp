@@ -39,6 +39,10 @@ export const CustomEditModalProps = {
   setModalOpen: PropTypes.func.isRequired, // Function to control the modal open state
 };
 
+export const CustomLinkProps = {
+  className: PropTypes.string.isRequired, // CSS class name for links
+};
+
 // PropTypes for the CustomMainContainer component
 export const CustomMainContainerProps = {
   className: PropTypes.string.isRequired, // CSS class name for styling

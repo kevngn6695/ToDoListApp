@@ -62,7 +62,7 @@ function CustomMenuContainer(props) {
           {/* Delete bin icon */}
           <CustomDeleteBin
             classNameWrapper={`to-do-delete-icon-wrapper ${
-              props.modalOpen ? "open" : "closed"
+              props.isMenuOpen ? "open" : "closed"
             }`}
             className="to-do-delete"
           />

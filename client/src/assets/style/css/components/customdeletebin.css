@@ -11,13 +11,10 @@
 
 /* Styling for the wrapper of the delete icon */
 .to-do-delete-icon-wrapper {
-    width: 200px;
-    height: 30px;
     border-radius: 10px;
     position: absolute;
     bottom: 1%;
     left: 50%;
-    opacity: 1;
     z-index: 1;
     transform: translate(-50%, -50%);
     background-color: white;
@@ -27,9 +24,14 @@
 /* Styling for the wrapper when it's open or closed */
 .to-do-delete-icon-wrapper.closed {
     right: 10%;
+    width: 10px;
+    height: 10px;
+    opacity: 1;
 }
 .to-do-delete-icon-wrapper.open {
     right: 37.5%;
+    width: 50px;
+    height: 50px;
 }
 
 /* Styling for the wrapper when it's draggable or hovered */
