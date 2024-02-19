@@ -41,8 +41,14 @@ export const CustomEditModalProps = {
 
 export const CustomLinkProps = {
   className: PropTypes.string.isRequired, // CSS class name for links
+  children: PropTypes.node.isRequired, // Content to be displayed inside the custom link
+  href: PropTypes.string.isRequired, // CSS href link for links
 };
 
+export const CustomListProps = {
+  classNameList: PropTypes.string.isRequired, // CSS class name for list
+  classNameListItem: PropTypes.string.isRequired, // CSS class name for list item
+};
 // PropTypes for the CustomMainContainer component
 export const CustomMainContainerProps = {
   className: PropTypes.string.isRequired, // CSS class name for styling

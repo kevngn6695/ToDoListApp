@@ -5,6 +5,7 @@ import React from "react";
 import CustomButton from "./CustomButton.js";
 import CustomDeleteBin from "./CustomDeleteBin.js";
 import CustomMenuSymbol from "./CustomMenuSymbol.js";
+import CustomNav from "./CustomNav.js";
 import CustomTextHeading from "./CustomTextHeading.js";
 import CustomTextInput from "./CustomTextInput.js";
 
@@ -59,6 +60,12 @@ function CustomMenuContainer(props) {
             children={`TASKS`}
             h6
           />
+
+          <CustomNav
+            classNameList={`to-do-menu-nav-list`}
+            classNameListItem={`to-do-menu-nav-list-item`}
+          />
+
           {/* Delete bin icon */}
           <CustomDeleteBin
             classNameWrapper={`to-do-delete-icon-wrapper ${

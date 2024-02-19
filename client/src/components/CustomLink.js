@@ -3,11 +3,12 @@ import React from "react";
 import { CustomLinkProps } from "../utils/propType";
 
 import "../assets/style/css/components/customlink.css";
-function CustomLink({ props }) {
+
+function CustomLink(props) {
   return (
-    <div className={props.className}>
-      <a>props.children</a>
-    </div>
+    <a className={props.className} href={props.href}>
+      {props.children}
+    </a>
   );
 }
 
