@@ -6,7 +6,7 @@ import { CustomListProps } from "../utils/propType";
 
 import "../assets/style/css/components/customlink.css";
 
-function CustomNav(props) {
+function CustomTaskNav(props) {
   return (
     <ul className={props.classNameList}>
       <li className={props.classNameListItem}>
@@ -25,6 +25,6 @@ function CustomNav(props) {
   );
 }
 
-CustomNav.propTypes = CustomListProps;
+CustomTaskNav.propTypes = CustomListProps;
 
-export default React.memo(CustomNav);
+export default React.memo(CustomTaskNav);
