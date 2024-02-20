@@ -7,8 +7,7 @@
 .to-do-text-display-container.closed,
 .to-do-text-display-container.open,
 .to-do-main-container,
-.to-do-menu-container,
-.to-do-modal-container {
+.to-do-menu-container{
     position: absolute;
     background-color: white;
     border-radius: 10px;
@@ -28,10 +27,12 @@
     Text Display Container Styles
     - Defines styles for text display containers in open and closed states.
 */
+
 .to-do-text-display-container.open,
 .to-do-text-display-container.closed {
-    min-height: 300px;
+    height: 300px;
     top: 55%;
+    /* overflow-y: auto; */
     transform: translate(0, -50%);
 }
 
@@ -52,6 +53,7 @@
 .to-do-display-container {
     flex-direction: column;
     height: 100%;
+    
 }
 
 .to-do-display-container.closed {
@@ -62,6 +64,7 @@
 .to-do-display-container.open {
     width: 75%;
     left: 25%;
+    
 }
 
 /* 
@@ -70,10 +73,12 @@
 */
 .to-do-text-display-container.closed {
     width: 95%;
+
 }
 
 .to-do-text-display-container.open {
     width: 50%;
+    overflow-y: scroll;
 }
 
 /* 
@@ -120,6 +125,11 @@
 .to-do-modal-container {
     width: 300px;
     min-height: 400px;
-    right: -85%;
-    top: -25%;
+    right: 5%;
+    top: 5%;
+    position: fixed;
+    z-index: 1000;
+    background-color: white;
+    border-radius: 10px;
+    transition: all 0.5s ease-in-out;
 }

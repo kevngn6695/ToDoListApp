@@ -1,7 +1,5 @@
 import "../assets/style/css/components/customeditmodal.css";
 
-import CustomModalContainer from "./CustomModalContainer";
-
 import React, { Fragment, useEffect, useState } from "react";
 
 import { capitalizeFirst } from "../services/capitalizeFirst";
@@ -10,12 +8,6 @@ import { CustomEditModalProps } from "../utils/propType";
 
 function CustomEditModal(props) {
   const [todos, setTodo] = useState([]);
-  const [open, setOpen] = useState(null);
-
-  const toggleDiv = (divName) => {
-    setOpen((prevopen) => (prevopen === divName ? null : divName));
-    props.setModalOpen((prevopen) => (prevopen === divName ? null : divName));
-  };
 
   const getTodo = async () => {
     try {
@@ -31,24 +23,9 @@ function CustomEditModal(props) {
     }
   };
 
-  const handleOutsideClick = (e) => {
-    if (open && e.target.closest(".to-do-main-container") === null) {
-      setOpen(null);
-      props.setModalOpen(false);
-    }
-  };
-
   const handleDragStart = (e, id) => {
     e.dataTransfer.setData("text/plain", id);
   };
-
-  useEffect(() => {
-    document.addEventListener("click", handleOutsideClick);
-
-    return () => {
-      document.removeEventListener("click", handleOutsideClick);
-    };
-  }, [open]);
 
   useEffect(() => {
     const id = setInterval(() => {
@@ -64,35 +41,18 @@ function CustomEditModal(props) {
     <>
       <div className={props.className}>
         {todos.map((todo) => (
-          <div className={props.classNameContainer}>
+          <div className={props.classNameContainer} key={todo.todo_id}>
             <div
               className={props.classNameModal}
-              onClick={() => toggleDiv(todo.todo_id)}
+              onClick={() => props.toggleDiv(todo.todo_id)}
               onDragStart={(e) => handleDragStart(e, todo.todo_id)}
               draggable
-              key={todo.todo_id}
             >
               <div className={props.classNameDescriptionContainer}>
                 {capitalizeFirst(todo.description)}
               </div>
             </div>
           </div>
-        ))}
-
-        {todos.map((todo) => (
-          <Fragment key={todo.todo_id}>
-            {open === todo.todo_id && (
-              <CustomModalContainer
-                className="to-do-modal-container"
-                description={todo.description}
-                onClose={() => setOpen(null)}
-                setModalOpen={props.setModalOpen}
-                todoId={todo.todo_id}
-              >
-                {capitalizeFirst(todo.description)}
-              </CustomModalContainer>
-            )}
-          </Fragment>
         ))}
       </div>
     </>
