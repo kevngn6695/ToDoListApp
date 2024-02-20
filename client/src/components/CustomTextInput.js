@@ -2,7 +2,7 @@
 import React from "react";
 
 // Importing PropTypes for defining the type of props.
-import { CustomTextInputProps } from "../utils/propType";
+import { CustomTextInputProps } from "../utils/proptype";
 
 // Importing the custom text input styles from the CSS file.
 import "../assets/style/css/components/customtextinput.css";

@@ -5,7 +5,7 @@ import "../assets/style/css/components/customcontainer.css";
 import React from "react";
 
 // Importing PropTypes for defining the type of props.
-import { CustomMainContainerProps } from "../utils/propType";
+import { CustomMainContainerProps } from "../utils/proptype";
 
 // Functional component for rendering a main container.
 function CustomMainContainer(props) {

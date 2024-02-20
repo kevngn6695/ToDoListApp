@@ -2,7 +2,7 @@ import React from "react";
 
 import CustomLink from "./CustomLink";
 
-import { CustomListProps } from "../utils/propType";
+import { CustomListProps } from "../utils/proptype";
 
 import "../assets/style/css/components/customlink.css";
 

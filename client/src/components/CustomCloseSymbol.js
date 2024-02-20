@@ -5,7 +5,7 @@ import React from "react";
 import "../assets/style/css/components/customclosesymbol.css";
 
 // Importing PropTypes for defining the type of props.
-import { CustomCloseSymbolProps } from "../utils/propType";
+import { CustomCloseSymbolProps } from "../utils/proptype";
 
 // Functional component for rendering a custom close symbol.
 function CustomCloseSymbol(props) {

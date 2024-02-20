@@ -2,7 +2,7 @@
 import React from "react";
 
 // Importing PropTypes for defining the type of props.
-import { HeaderProps } from "../utils/propType";
+import { HeaderProps } from "../utils/proptype";
 
 // Importing the header styles from the CSS file.
 import "../assets/style/css/main/header.css";

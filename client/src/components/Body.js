@@ -2,7 +2,7 @@
 import React from "react";
 
 // Importing PropTypes for defining the type of props.
-import { BodyProps } from "../utils/propType";
+import { BodyProps } from "../utils/proptype";
 
 // Importing the body styles from the CSS file.
 import "../assets/style/css/main/body.css";

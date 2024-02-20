@@ -5,7 +5,7 @@ import "../assets/style/css/components/custommenusymbol.css";
 import React from "react";
 
 // Importing PropTypes for defining the type of props.
-import { CustomMenuSymbolProps } from "../utils/propType";
+import { CustomMenuSymbolProps } from "../utils/proptype";
 
 // Functional component for rendering a custom menu symbol.
 function CustomMenuSymbol(props) {

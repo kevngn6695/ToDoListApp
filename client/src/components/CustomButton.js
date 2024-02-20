@@ -2,7 +2,7 @@
 import React from "react";
 
 // Importing PropTypes for defining the type of props.
-import { CustomButtonProps } from "../utils/propType";
+import { CustomButtonProps } from "../utils/proptype";
 
 // Importing the custom button styles from the CSS file.
 import "../assets/style/css/components/custombutton.css";

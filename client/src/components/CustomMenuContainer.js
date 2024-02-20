@@ -13,7 +13,7 @@ import CustomTextInput from "./CustomTextInput.js";
 import "../assets/style/css/components/customcontainer.css";
 
 // Importing PropTypes for defining the type of props.
-import { CustomMenuContainerProps } from "../utils/propType.js";
+import { CustomMenuContainerProps } from "../utils/proptype.js";
 
 // Functional component for rendering a menu container with various components.
 function CustomMenuContainer(props) {

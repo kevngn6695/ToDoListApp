@@ -1,11 +1,11 @@
 // Importing utility function for capitalizing the first letter of a string.
-import { capitalizeFirst } from "../services/capitalizeFirst";
+import { capitalizeFirst } from "../services/capitalizefirst";
 
 // Importing React and useState hook for managing component state.
 import React, { useState } from "react";
 
 // Importing PropTypes for defining the type of props.
-import { CustomModalContainerProps } from "../utils/propType";
+import { CustomModalContainerProps } from "../utils/proptype";
 
 // Importing custom components for building the modal container.
 import CustomButton from "./CustomButton";

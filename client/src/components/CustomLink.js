@@ -1,6 +1,6 @@
 import React from "react";
 
-import { CustomLinkProps } from "../utils/propType";
+import { CustomLinkProps } from "../utils/proptype";
 
 import "../assets/style/css/components/customlink.css";
 

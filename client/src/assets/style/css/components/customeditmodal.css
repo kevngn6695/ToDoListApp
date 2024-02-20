@@ -30,3 +30,25 @@
     transition: all 0.5s ease-in-out;
 }
 
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    /* Adjust styles for small devices here */
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    /* Adjust styles for medium devices here */
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    /* Adjust styles for large devices here */
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    /* Adjust styles for extra large devices here */
+}

@@ -5,13 +5,15 @@ import React, { Fragment, useState, useEffect } from "react";
 import CustomEditModal from "./CustomEditModal";
 import CustomModalContainer from "./CustomModalContainer";
 
-import { capitalizeFirst } from "../services/capitalizeFirst";
+import { capitalizeFirst } from "../services/capitalizefirst";
 
 // Importing the custom text display styles from the CSS file.
 import "../assets/style/css/components/customtextdisplay.css";
 
 // Importing PropTypes for defining the type of props.
-import { CustomTextDisplayProps } from "../utils/propType";
+import { CustomTextDisplayProps } from "../utils/proptype";
+
+import { getTodo } from "../utils/fetch";
 
 // Functional component for rendering a custom text display with editing capabilities.
 function CustomTextDisplay(props) {
@@ -30,19 +32,6 @@ function CustomTextDisplay(props) {
     }
   };
 
-  const getTodo = async () => {
-    try {
-      const res = await fetch("http://localhost:5000/todos", {
-        method: "GET",
-        headers: { "Content-Type": "application/json" },
-      });
-      const allTodo = await res.json();
-
-      setTodo(allTodo);
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
   useEffect(() => {
     document.addEventListener("click", handleOutsideClick);
 
@@ -53,7 +42,7 @@ function CustomTextDisplay(props) {
 
   useEffect(() => {
     const id = setInterval(() => {
-      getTodo();
+      getTodo(setTodo);
     }, 1000);
 
     return () => {

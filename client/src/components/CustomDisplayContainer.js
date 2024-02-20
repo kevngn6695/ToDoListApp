@@ -5,7 +5,7 @@ import "../assets/style/css/components/customcontainer.css";
 import React from "react";
 
 // Importing PropTypes for defining the type of props.
-import { CustomDisplayContainerProps } from "../utils/propType";
+import { CustomDisplayContainerProps } from "../utils/proptype";
 
 // Functional component for rendering a display container.
 function CustomDisplayContainer(props) {

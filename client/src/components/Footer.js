@@ -2,7 +2,7 @@
 import React from "react";
 
 // Importing PropTypes for defining the type of props.
-import { FooterProps } from "../utils/propType";
+import { FooterProps } from "../utils/proptype";
 
 // Importing the footer styles from the CSS file.
 import "../assets/style/css/main/footer.css";

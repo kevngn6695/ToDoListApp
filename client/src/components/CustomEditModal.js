@@ -2,9 +2,9 @@ import "../assets/style/css/components/customeditmodal.css";
 
 import React, { Fragment, useEffect, useState } from "react";
 
-import { capitalizeFirst } from "../services/capitalizeFirst";
+import { capitalizeFirst } from "../services/capitalizefirst";
 
-import { CustomEditModalProps } from "../utils/propType";
+import { CustomEditModalProps } from "../utils/proptype";
 
 function CustomEditModal(props) {
   const [todos, setTodo] = useState([]);

@@ -5,7 +5,7 @@ import "../assets/style/css/components/customdeletebin.css";
 import React, { useState } from "react";
 
 // Importing PropTypes for defining the type of props.
-import { CustomDeleteBinProps } from "../utils/propType";
+import { CustomDeleteBinProps } from "../utils/proptype";
 
 // Importing the delete icon image.
 import deleteIcon from "../assets/media/images/icons/icons/delete.png";

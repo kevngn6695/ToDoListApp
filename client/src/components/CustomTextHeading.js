@@ -2,7 +2,7 @@
 import React from "react";
 
 // Importing PropTypes for defining the type of props.
-import { CustomTextHeadingProps } from "../utils/propType";
+import { CustomTextHeadingProps } from "../utils/proptype";
 
 // Importing the custom text heading styles from the CSS file.
 import "../assets/style/css/components/customtextheading.css";

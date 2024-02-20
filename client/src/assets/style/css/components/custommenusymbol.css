@@ -41,3 +41,26 @@
 .open .to-do-menu-symbol:nth-child(3) {
   transform: rotate(45deg) translate(2px, -3px);
 }
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  /* Adjust styles for small devices here */
+
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  /* Adjust styles for medium devices here */
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  /* Adjust styles for large devices here */
+
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  /* Adjust styles for extra large devices here */
+}
