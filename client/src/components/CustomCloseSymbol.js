@@ -2,7 +2,7 @@
 import React from "react";
 
 // Importing the custom close symbol styles from the CSS file.
-import "../assets/style/css/components/customclosesymbol.css";
+import "../assets/style/css/components/customclosesymbol.sass";
 
 // Importing PropTypes for defining the type of props.
 import { CustomCloseSymbolProps } from "../utils/proptype";

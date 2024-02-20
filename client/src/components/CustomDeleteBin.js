@@ -1,5 +1,5 @@
 // Importing the custom delete bin styles from the CSS file.
-import "../assets/style/css/components/customdeletebin.css";
+import "../assets/style/css/components/customdeletebin.sass";
 
 // Importing React for JSX syntax and basic functionality, and useState hook for managing component state.
 import React, { useState } from "react";

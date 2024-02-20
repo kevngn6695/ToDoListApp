@@ -14,7 +14,7 @@ import CustomTextHeading from "./CustomTextHeading";
 import CustomTextInput from "./CustomTextInput";
 
 // Importing the custom container styles from the CSS file.
-import "../assets/style/css/components/customcontainer.css";
+import "../assets/style/css/components/customcontainer.sass";
 
 // Functional component for rendering a modal container with editing functionality.
 function CustomModalContainer(props) {

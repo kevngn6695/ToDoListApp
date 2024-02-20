@@ -1,4 +1,4 @@
-import "../assets/style/css/components/customeditmodal.css";
+import "../assets/style/css/components/customeditmodal.sass";
 
 import React, { Fragment, useEffect, useState } from "react";
 

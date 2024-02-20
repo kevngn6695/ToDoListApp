@@ -1,5 +1,5 @@
 // Importing the custom container styles from the CSS file.
-import "../assets/style/css/components/customcontainer.css";
+import "../assets/style/css/components/customcontainer.sass";
 
 // Importing React for JSX syntax and basic functionality.
 import React from "react";

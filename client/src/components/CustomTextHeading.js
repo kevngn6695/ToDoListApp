@@ -5,7 +5,7 @@ import React from "react";
 import { CustomTextHeadingProps } from "../utils/proptype";
 
 // Importing the custom text heading styles from the CSS file.
-import "../assets/style/css/components/customtextheading.css";
+import "../assets/style/css/components/customtextheading.sass";
 
 // Functional component for rendering a custom text heading.
 function CustomTextHeading(props) {

@@ -1,5 +1,5 @@
 // Importing the custom menu symbol styles from the CSS file.
-import "../assets/style/css/components/custommenusymbol.css";
+import "../assets/style/css/components/custommenusymbol.sass";
 
 // Importing React for JSX syntax and basic functionality.
 import React from "react";

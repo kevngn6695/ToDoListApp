@@ -10,7 +10,7 @@ import CustomTextHeading from "./CustomTextHeading.js";
 import CustomTextInput from "./CustomTextInput.js";
 
 // Importing the custom container styles from the CSS file.
-import "../assets/style/css/components/customcontainer.css";
+import "../assets/style/css/components/customcontainer.sass";
 
 // Importing PropTypes for defining the type of props.
 import { CustomMenuContainerProps } from "../utils/proptype.js";

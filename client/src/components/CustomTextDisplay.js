@@ -8,7 +8,7 @@ import CustomModalContainer from "./CustomModalContainer";
 import { capitalizeFirst } from "../services/capitalizefirst";
 
 // Importing the custom text display styles from the CSS file.
-import "../assets/style/css/components/customtextdisplay.css";
+import "../assets/style/css/components/customtextdisplay.sass";
 
 // Importing PropTypes for defining the type of props.
 import { CustomTextDisplayProps } from "../utils/proptype";

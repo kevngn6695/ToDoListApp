@@ -5,7 +5,7 @@ import React from "react";
 import { FooterProps } from "../utils/proptype";
 
 // Importing the footer styles from the CSS file.
-import "../assets/style/css/main/footer.css";
+import "../assets/style/css/main/footer.sass";
 
 // Functional component for rendering the footer.
 function Footer(props) {

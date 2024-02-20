@@ -1,5 +1,5 @@
 // Importing CSS file for styling
-import "./assets/style/css/main/app.css";
+import "./assets/style/css/main/app.sass";
 
 // Importing React and necessary hooks
 import React, { useState, useEffect } from "react";

@@ -4,7 +4,7 @@ import CustomLink from "./CustomLink";
 
 import { CustomListProps } from "../utils/proptype";
 
-import "../assets/style/css/components/customlink.css";
+import "../assets/style/css/components/customlink.sass";
 
 function CustomTaskNav(props) {
   return (

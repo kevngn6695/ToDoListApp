@@ -5,7 +5,7 @@ import React from "react";
 import { HeaderProps } from "../utils/proptype";
 
 // Importing the header styles from the CSS file.
-import "../assets/style/css/main/header.css";
+import "../assets/style/css/main/header.sass";
 
 // Functional component for rendering the header.
 function Header(props) {

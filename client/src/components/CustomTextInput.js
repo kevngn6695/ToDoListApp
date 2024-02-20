@@ -5,7 +5,7 @@ import React from "react";
 import { CustomTextInputProps } from "../utils/proptype";
 
 // Importing the custom text input styles from the CSS file.
-import "../assets/style/css/components/customtextinput.css";
+import "../assets/style/css/components/customtextinput.sass";
 
 // Functional component for rendering a custom text input.
 function CustomTextInput(props) {

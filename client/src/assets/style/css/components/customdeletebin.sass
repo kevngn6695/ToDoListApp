@@ -1,0 +1,38 @@
+/* Styling for the delete icon */
+.to-do-delete-icon
+    width: 10px
+    position: absolute
+    background-color: white
+    top: 50%
+    left: 50%
+    user-select: none
+    transform: translate(-50%,-50%)
+
+/* Styling for the wrapper of the delete icon */
+.to-do-delete-icon-wrapper
+    border-radius: 10px
+    position: absolute
+    bottom: 1%
+    left: 50%
+    z-index: 1
+    transform: translate(-50%, -50%)
+    background-color: white
+    transition: all 0.5s ease-in-out
+
+/* Styling for the wrapper when it's open or closed */
+.to-do-delete-icon-wrapper.closed 
+    right: 10%
+    width: 10px
+    height: 10px
+    opacity: 1
+
+.to-do-delete-icon-wrapper.open 
+    right: 37.5%
+    width: 50px
+    height: 50px
+
+
+/* Styling for the wrapper when it's draggable or hovered */
+.draggable, .to-do-delete-icon-wrapper:hover 
+    box-shadow: 0px 1px 10px 4px rgba(165, 55, 253, 0.5)
+

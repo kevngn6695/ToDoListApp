@@ -2,7 +2,7 @@ import React from "react";
 
 import { CustomLinkProps } from "../utils/proptype";
 
-import "../assets/style/css/components/customlink.css";
+import "../assets/style/css/components/customlink.sass";
 
 function CustomLink(props) {
   return (

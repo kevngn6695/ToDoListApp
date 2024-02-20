@@ -5,7 +5,7 @@ import React from "react";
 import { BodyProps } from "../utils/proptype";
 
 // Importing the body styles from the CSS file.
-import "../assets/style/css/main/body.css";
+import "../assets/style/css/main/body.sass";
 
 // Functional component for rendering the body element.
 function Body(props) {

@@ -5,7 +5,7 @@ import React from "react";
 import { CustomButtonProps } from "../utils/proptype";
 
 // Importing the custom button styles from the CSS file.
-import "../assets/style/css/components/custombutton.css";
+import "../assets/style/css/components/custombutton.sass";
 
 // Functional component for rendering a custom button.
 function CustomButton(props) {
