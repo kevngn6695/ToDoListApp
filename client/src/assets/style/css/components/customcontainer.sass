@@ -1,3 +1,5 @@
+@import './customscroll.sass'
+
 /* Container Styles: Defines common styles for various container elements.: Includes position, background color, border radius, and transition effects. */
 .to-do-display-container,
 .to-do-text-display-container.closed,
@@ -41,13 +43,16 @@
     width: 75%
     left: 25%
 
+.to-do-text-display-container
+    overflow-y: auto
+
 /* Text Display Container Styles: Defines styles for text display containers in open and closed states. */
 .to-do-text-display-container.closed 
     width: 95%
 
 .to-do-text-display-container.open 
     width: 50%
-    overflow-y: scroll
+    // overflow-y: auto
 
 /* Main Container Styles: Defines styles for the main container element. */
 .to-do-main-container 

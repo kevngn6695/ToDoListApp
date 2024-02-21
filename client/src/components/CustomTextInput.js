@@ -7,7 +7,10 @@ import { CustomTextInputProps } from "../utils/proptype";
 // Importing the custom text input styles from the CSS file.
 import "../assets/style/css/components/customtextinput.sass";
 
-// Functional component for rendering a custom text input.
+/**
+ * Functional component for rendering a custom text input.
+ * @return the custom text input for multipurposes.
+ */
 function CustomTextInput(props) {
   // Returning a form element with an input field for text input.
   return (
