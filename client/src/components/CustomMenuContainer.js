@@ -17,6 +17,13 @@ import { CustomMenuContainerProps } from "../utils/proptype.js";
 
 // Functional component for rendering a menu container with various components.
 function CustomMenuContainer(props) {
+  // Initializing the url for navigating pages throughtout the web
+  const urlLink = [
+    { url: "/upcomming", text: "upcomming" },
+    { url: "/today", text: "today" },
+    { url: "/calendar", text: "calendar" },
+    { url: "/note", text: "note" },
+  ];
   // Rendering the menu container with conditional rendering based on isMenuOpen prop.
   return (
     <div
@@ -64,6 +71,7 @@ function CustomMenuContainer(props) {
           <CustomTaskNav
             classNameList={`to-do-menu-nav-list`}
             classNameListItem={`to-do-menu-nav-list-item`}
+            classNameLink={`to-do-menu-nav-link`}
           />
 
           {/* Heading for tasks */}
@@ -71,7 +79,7 @@ function CustomMenuContainer(props) {
             className={`to-do-menu-types-text-heading ${
               props.isMenuOpen ? "open" : "closed"
             }`}
-            children={`Types`}
+            children={`TYPES`}
             h6
           />
 

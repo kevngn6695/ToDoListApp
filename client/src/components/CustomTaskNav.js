@@ -4,22 +4,30 @@ import CustomLink from "./CustomLink";
 
 import { CustomListProps } from "../utils/proptype";
 
-import "../assets/style/css/components/customlink.sass";
+import "../assets/style/css/components/customnavbar.sass";
 
 function CustomTaskNav(props) {
   return (
     <ul className={props.classNameList}>
       <li className={props.classNameListItem}>
-        <CustomLink>Upcoming</CustomLink>
+        <CustomLink className={props.classNameLink} href="/">
+          Upcoming
+        </CustomLink>
       </li>
       <li className={props.classNameListItem}>
-        <CustomLink>Today</CustomLink>
+        <CustomLink className={props.classNameLink} href="/">
+          Today
+        </CustomLink>
       </li>
       <li className={props.classNameListItem}>
-        <CustomLink>Calendar</CustomLink>
+        <CustomLink className={props.classNameLink} href="/">
+          Calendar
+        </CustomLink>
       </li>
       <li className={props.classNameListItem}>
-        <CustomLink>Note</CustomLink>
+        <CustomLink className={props.classNameLink} href="/">
+          Note
+        </CustomLink>
       </li>
     </ul>
   );
