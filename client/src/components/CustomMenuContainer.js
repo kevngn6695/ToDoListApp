@@ -69,9 +69,16 @@ function CustomMenuContainer(props) {
           />
 
           <CustomTaskNav
-            classNameList={`to-do-menu-nav-list`}
-            classNameListItem={`to-do-menu-nav-list-item`}
-            classNameLink={`to-do-menu-nav-link`}
+            classNameList={`to-do-menu-nav-list ${
+              props.isMenuOpen ? "open" : "closed"
+            }`}
+            classNameListItem={`to-do-menu-nav-list-item ${
+              props.isMenuOpen ? "open" : "closed"
+            }`}
+            classNameLink={`to-do-menu-nav-link ${
+              props.isMenuOpen ? "open" : "closed"
+            }`}
+            urlLink={urlLink}
           />
 
           {/* Heading for tasks */}

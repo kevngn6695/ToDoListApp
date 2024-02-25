@@ -1,3 +1,7 @@
+/* Font Imports: Imports custom fonts from external CSS files. */
+@import '../fonts/fonts.sass'
+@import '../animations/animations.sass'
+
 .to-do-menu-nav-list
     position: absolute
     width: 100%
@@ -9,3 +13,8 @@
     border-radius: 5px
     margin-left: 5px
     padding: 3px 3px 3px 10px
+
+.to-do-menu-nav-list-item.open,
+.to-do-menu-nav-list.open
+    -webkit-animation: 2s ease 0s normal forwards 1 fadein
+    animation: 2s ease 0s normal forwards 1 fadein
