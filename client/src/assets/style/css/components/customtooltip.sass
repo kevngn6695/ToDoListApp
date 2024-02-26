@@ -1,0 +1,38 @@
+@import '../fonts/fonts.sass'
+@import '../animations/animations.sass'
+
+$to-do-tooltip-bg-color: #333
+$to-do-tooltip-text-color: #fff
+
+.to-do-tooltip-container 
+  position: relative
+  display: inline-block
+
+  .to-do-tooltip 
+    visibility: hidden
+    background-color: $to-do-tooltip-bg-color
+    color: $to-do-tooltip-text-color
+    text-align: center
+    border-radius: 6px
+    padding: 5px 0
+    position: absolute
+    z-index: 1
+    bottom: 125%
+    left: 50%
+    transform: translateX(-50%)
+    width: 120px
+    
+    &::after 
+      content: ""
+      position: absolute
+      top: 100%
+      left: 50%
+      margin-left: -5px
+      border-width: 5px
+      border-style: solid
+      border-color: $to-do-tooltip-bg-color transparent transparent transparent
+    
+
+  &:hover .to-do-tooltip 
+    visibility: visible
+  

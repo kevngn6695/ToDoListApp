@@ -8,6 +8,7 @@ import CustomMenuSymbol from "./CustomMenuSymbol.js";
 import CustomTaskNav from "./CustomTaskNav.js";
 import CustomTextHeading from "./CustomTextHeading.js";
 import CustomTextInput from "./CustomTextInput.js";
+import CustomTooltip from "./CustomTooltip.js";
 
 // Importing the custom container styles from the CSS file.
 import "../assets/style/css/components/customcontainer.sass";
@@ -48,7 +49,13 @@ function CustomMenuContainer(props) {
             children="Menu"
             h1
           />
+
           {/* Text input field */}
+          {/* <CustomTooltip
+            classNameTooltipContainer={`to-do-tooltip-container`}
+            classNameTooltip={`to-do-tooltip`}
+            text={`Search for a certain tasks`}
+          > */}
           <CustomTextInput
             classNameForm={`to-do-menu-text-input-form ${
               props.isMenuOpen ? "open" : "closed"
@@ -59,6 +66,8 @@ function CustomMenuContainer(props) {
             type="text"
             placeholder="Search"
           />
+          {/* </CustomTooltip> */}
+
           {/* Heading for tasks */}
           <CustomTextHeading
             className={`to-do-menu-tasks-text-heading ${
