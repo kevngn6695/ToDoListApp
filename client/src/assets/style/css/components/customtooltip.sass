@@ -5,8 +5,9 @@ $to-do-tooltip-bg-color: #333
 $to-do-tooltip-text-color: #fff
 
 .to-do-tooltip-container 
-  position: relative
-  display: inline-block
+  position: absolute
+  width: 100%
+  border: 1px solid black
 
   .to-do-tooltip 
     visibility: hidden
@@ -18,8 +19,6 @@ $to-do-tooltip-text-color: #fff
     position: absolute
     z-index: 1
     bottom: 125%
-    left: 50%
-    transform: translateX(-50%)
     width: 120px
     
     &::after 
@@ -31,7 +30,6 @@ $to-do-tooltip-text-color: #fff
       border-width: 5px
       border-style: solid
       border-color: $to-do-tooltip-bg-color transparent transparent transparent
-    
 
   &:hover .to-do-tooltip 
     visibility: visible

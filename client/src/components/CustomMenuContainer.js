@@ -38,10 +38,16 @@ function CustomMenuContainer(props) {
         {/* Custom menu symbol */}
         <CustomMenuSymbol className={`to-do-menu-symbol`} />
       </CustomButton>
+
       {/* Conditional rendering for menu content */}
       {props.isMenuOpen && (
         <>
           {/* Heading for the menu */}
+          {/* <CustomTooltip
+            classNameTooltipContainer={`to-do-tooltip-container`}
+            classNameTooltip={`to-do-tooltip`}
+            text="Open"
+          > */}
           <CustomTextHeading
             className={`to-do-menu-text-heading ${
               props.isMenuOpen ? "open" : "closed"
@@ -49,13 +55,9 @@ function CustomMenuContainer(props) {
             children="Menu"
             h1
           />
+          {/* </CustomTooltip> */}
 
           {/* Text input field */}
-          {/* <CustomTooltip
-            classNameTooltipContainer={`to-do-tooltip-container`}
-            classNameTooltip={`to-do-tooltip`}
-            text={`Search for a certain tasks`}
-          > */}
           <CustomTextInput
             classNameForm={`to-do-menu-text-input-form ${
               props.isMenuOpen ? "open" : "closed"
@@ -66,7 +68,6 @@ function CustomMenuContainer(props) {
             type="text"
             placeholder="Search"
           />
-          {/* </CustomTooltip> */}
 
           {/* Heading for tasks */}
           <CustomTextHeading
@@ -76,7 +77,6 @@ function CustomMenuContainer(props) {
             children={`TASKS`}
             h6
           />
-
           <CustomTaskNav
             classNameList={`to-do-menu-nav-list ${
               props.isMenuOpen ? "open" : "closed"
@@ -89,7 +89,6 @@ function CustomMenuContainer(props) {
             }`}
             urlLink={urlLink}
           />
-
           {/* Heading for tasks */}
           <CustomTextHeading
             className={`to-do-menu-types-text-heading ${
@@ -98,7 +97,6 @@ function CustomMenuContainer(props) {
             children={`TYPES`}
             h6
           />
-
           {/* Delete bin icon */}
           <CustomDeleteBin
             classNameWrapper={`to-do-delete-icon-wrapper ${
