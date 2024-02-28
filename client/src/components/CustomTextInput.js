@@ -17,10 +17,9 @@ function CustomTextInput(props) {
     <form className={props.classNameForm} onSubmit={props.onSubmit}>
       <input
         className={props.classNameInput}
-        type={props.type}
-        placeholder={props.placeholder}
         value={props.description}
         onChange={props.onChange}
+        {...props}
       />
       {/* Commented out span element, possibly intended for future use */}
       {/* <span className="to-do-add-sign"></span> */}

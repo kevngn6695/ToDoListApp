@@ -11,7 +11,7 @@ import "../assets/style/css/components/custombutton.sass";
 function CustomButton(props) {
   // Rendering a button element with the provided className and onClick event handler.
   return (
-    <button className={props.className} onClick={props.onClick}>
+    <button className={props.className} onClick={props.onClick} {...props}>
       {props.children}
     </button>
   );
