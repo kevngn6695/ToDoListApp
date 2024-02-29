@@ -89,12 +89,19 @@
     transition: all 0.5s ease-in-out
 
 .to-do-date-and-time-container
-    width: 50%
-    left: 50%
     z-index: 1000
     position: absolute
-    border: 1px solid black
     height: 75px
+    transition: all 0.5s ease-in-out
+
+.to-do-date-and-time-container.open
+    left: 25%
+    width: 75%
+
+.to-do-date-and-time-container.closed
+    left: 8%
+    width: 92%
+
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) 

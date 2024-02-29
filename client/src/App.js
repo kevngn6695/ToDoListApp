@@ -78,7 +78,9 @@ function App() {
               modalOpen={modalOpen}
             />
             <CustomDateAndTimeContainer
-              classNameDateAndTimeContainer={`to-do-date-and-time-container`}
+              classNameDateAndTimeContainer={`to-do-date-and-time-container ${
+                isMenuOpen ? "open" : "closed"
+              }`}
             >
               <CustomTextHeading
                 className="to-do-main-text-heading-week-day"
