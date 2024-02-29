@@ -8,7 +8,6 @@ import CustomMenuSymbol from "./CustomMenuSymbol.js";
 import CustomTaskNav from "./CustomTaskNav.js";
 import CustomTextHeading from "./CustomTextHeading.js";
 import CustomTextInput from "./CustomTextInput.js";
-import CustomTooltip from "./CustomTooltip.js";
 
 // Importing the custom container styles from the CSS file.
 import "../assets/style/css/components/customcontainer.sass";
@@ -20,8 +19,8 @@ import { CustomMenuContainerProps } from "../utils/proptype.js";
 function CustomMenuContainer(props) {
   // Initializing the url for navigating pages throughtout the web
   const urlLink = [
+    { url: "/", text: "Today" },
     { url: "/upcomming", text: "upcomming" },
-    { url: "/today", text: "today" },
     { url: "/calendar", text: "calendar" },
     { url: "/note", text: "note" },
   ];
