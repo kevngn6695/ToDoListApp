@@ -1,6 +1,5 @@
 // Importing CSS file for styling
 import "./assets/style/css/main/app.sass";
-import "./assets/style/css/main/body.sass";
 
 // Importing React and necessary hooks
 import React, { useState, useEffect } from "react";
@@ -20,7 +19,7 @@ import CustomDateAndTimeContainer from "./components/CustomDateAndTimeContainer"
 import Home from "./pages/Home";
 import Upcoming from "./pages/Upcomming";
 import Calendar from "./pages/Calendar";
-import Notes from "./pages/Note";
+import Note from "./pages/Note";
 
 /**
  * Main element representing the To-Do list application.
@@ -69,7 +68,6 @@ function App() {
     <div className="App">
       <Router>
         {/* <Header className="to-do-header" /> */}
-
         <CustomMainContainer className="to-do-main-container">
           <CustomMenuContainer
             className="to-do-menu-container"
@@ -118,7 +116,7 @@ function App() {
             />
             <Route path="/upcomming" element={<Upcoming />} />
             <Route path="/calendar" element={<Calendar />} />
-            <Route path="/notes" element={<Notes />} />
+            <Route path="/note" element={<Note />} />
           </Routes>
         </CustomMainContainer>
 

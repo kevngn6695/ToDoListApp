@@ -1,7 +1,7 @@
 import React from "react";
 
-function Login() {
-  return <div>Login</div>;
+function Login(props) {
+  return <section className={props.className}>Login</section>;
 }
 
 export default Login;

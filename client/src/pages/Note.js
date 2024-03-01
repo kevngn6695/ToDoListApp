@@ -1,7 +1,7 @@
 import React from "react";
 
 function Note(props) {
-  return <div></div>;
+  return <section className={props.className}>Note</section>;
 }
 
 export default React.memo(Note);

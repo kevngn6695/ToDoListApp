@@ -1,7 +1,9 @@
 import React from "react";
 
+import "../assets/style/css/pages/setting.sass";
+
 function Setting(props) {
-  return <div>Setting</div>;
+  return <section className={props.className}>Setting</section>;
 }
 
 export default React.memo(Setting);
