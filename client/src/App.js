@@ -76,26 +76,31 @@ function App() {
               onClick={handleMenuOpen}
               isMenuOpen={isMenuOpen}
               modalOpen={modalOpen}
+              data-testid="menu-container"
             />
             <CustomDateAndTimeContainer
               classNameDateAndTimeContainer={`to-do-date-and-time-container ${
                 isMenuOpen ? "open" : "closed"
               }`}
+              data-testid="date-time-container"
             >
               <CustomTextHeading
                 className="to-do-main-text-heading-week-day"
                 children={today}
                 h1
+                data-testid="week-day"
               />
               <CustomTextHeading
                 className="to-do-main-text-heading-date"
                 children={dateStr}
                 h5
+                data-testid="date"
               />
               <CustomTextHeading
                 className="to-do-main-text-heading-time"
                 children={time}
                 h5
+                data-testid="time"
               />
             </CustomDateAndTimeContainer>
 
@@ -117,7 +122,11 @@ function App() {
             </Routes>
           </CustomMainContainer>
         </Body>
-        <Footer className="to-do-footer-paragraph" currentYear={currentYear} />
+        <Footer
+          className="to-do-footer-paragraph"
+          currentYear={currentYear}
+          data-testid="footer"
+        />
       </Router>
     </div>
   );
