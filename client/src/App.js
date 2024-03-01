@@ -1,5 +1,6 @@
 // Importing CSS file for styling
 import "./assets/style/css/main/app.sass";
+import "./assets/style/css/main/body.sass";
 
 // Importing React and necessary hooks
 import React, { useState, useEffect } from "react";
@@ -7,8 +8,7 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 // Importing main components
-import Header from "./components/Header";
-import Body from "./components/Body";
+// import Header from "./components/Header";
 import Footer from "./components/Footer";
 
 import CustomMainContainer from "./components/CustomMainContainer";
@@ -68,60 +68,60 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Header />
-        <Body className="to-do-body">
-          <CustomMainContainer className="to-do-main-container">
-            <CustomMenuContainer
-              className="to-do-menu-container"
-              onClick={handleMenuOpen}
-              isMenuOpen={isMenuOpen}
-              modalOpen={modalOpen}
-              data-testid="menu-container"
-            />
-            <CustomDateAndTimeContainer
-              classNameDateAndTimeContainer={`to-do-date-and-time-container ${
-                isMenuOpen ? "open" : "closed"
-              }`}
-              data-testid="date-time-container"
-            >
-              <CustomTextHeading
-                className="to-do-main-text-heading-week-day"
-                children={today}
-                h1
-                data-testid="week-day"
-              />
-              <CustomTextHeading
-                className="to-do-main-text-heading-date"
-                children={dateStr}
-                h5
-                data-testid="date"
-              />
-              <CustomTextHeading
-                className="to-do-main-text-heading-time"
-                children={time}
-                h5
-                data-testid="time"
-              />
-            </CustomDateAndTimeContainer>
+        {/* <Header className="to-do-header" /> */}
 
-            <Routes>
-              <Route
-                exact
-                path="/"
-                element={
-                  <Home
-                    isMenuOpen={isMenuOpen}
-                    modalOpen={modalOpen}
-                    setModalOpen={setModalOpen}
-                  />
-                }
-              />
-              <Route path="/upcomming" element={<Upcoming />} />
-              <Route path="/calendar" element={<Calendar />} />
-              <Route path="/notes" element={<Notes />} />
-            </Routes>
-          </CustomMainContainer>
-        </Body>
+        <CustomMainContainer className="to-do-main-container">
+          <CustomMenuContainer
+            className="to-do-menu-container"
+            onClick={handleMenuOpen}
+            isMenuOpen={isMenuOpen}
+            modalOpen={modalOpen}
+            data-testid="menu-container"
+          />
+          <CustomDateAndTimeContainer
+            classNameDateAndTimeContainer={`to-do-date-and-time-container ${
+              isMenuOpen ? "open" : "closed"
+            }`}
+            data-testid="date-time-container"
+          >
+            <CustomTextHeading
+              className="to-do-main-text-heading-week-day"
+              children={today}
+              h1
+              data-testid="week-day"
+            />
+            <CustomTextHeading
+              className="to-do-main-text-heading-date"
+              children={dateStr}
+              h5
+              data-testid="date"
+            />
+            <CustomTextHeading
+              className="to-do-main-text-heading-time"
+              children={time}
+              h5
+              data-testid="time"
+            />
+          </CustomDateAndTimeContainer>
+
+          <Routes>
+            <Route
+              exact
+              path="/"
+              element={
+                <Home
+                  isMenuOpen={isMenuOpen}
+                  modalOpen={modalOpen}
+                  setModalOpen={setModalOpen}
+                />
+              }
+            />
+            <Route path="/upcomming" element={<Upcoming />} />
+            <Route path="/calendar" element={<Calendar />} />
+            <Route path="/notes" element={<Notes />} />
+          </Routes>
+        </CustomMainContainer>
+
         <Footer
           className="to-do-footer-paragraph"
           currentYear={currentYear}

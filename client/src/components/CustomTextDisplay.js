@@ -33,22 +33,17 @@ function CustomTextDisplay(props) {
   };
 
   useEffect(() => {
-    document.addEventListener("click", handleOutsideClick);
-
-    return () => {
-      document.removeEventListener("click", handleOutsideClick);
-    };
-  }, [open]);
-
-  useEffect(() => {
     const id = setInterval(() => {
       getTodo(setTodo);
     }, 1000);
 
+    document.addEventListener("click", handleOutsideClick);
+
     return () => {
       clearInterval(id);
+      document.removeEventListener("click", handleOutsideClick);
     };
-  }, [todos]);
+  }, []);
 
   // Rendering the CustomEditModal component with provided props.
   return (

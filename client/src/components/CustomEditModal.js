@@ -41,7 +41,7 @@ function CustomEditModal(props) {
     <>
       <div className={props.className}>
         {todos.map((todo) => (
-          <div className={props.classNameContainer} key={todo.todo_id}>
+          <div key={todo.todo_id}>
             <div
               className={props.classNameModal}
               onClick={() => props.toggleDiv(todo.todo_id)}

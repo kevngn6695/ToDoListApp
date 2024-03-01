@@ -11,13 +11,18 @@ import "../assets/style/css/components/customtextinput.sass";
  * Functional component for rendering a custom text input.
  * @return the custom text input for multipurposes.
  */
-function CustomTextInput(props) {
+function CustomTextInput({
+  classNameForm,
+  classNameInput,
+  description,
+  ...props
+}) {
   // Returning a form element with an input field for text input.
   return (
-    <form className={props.classNameForm} onSubmit={props.onSubmit}>
+    <form className={classNameForm} onSubmit={props.onSubmit}>
       <input
-        className={props.classNameInput}
-        value={props.description}
+        className={classNameInput}
+        value={description}
         onChange={props.onChange}
         {...props}
       />

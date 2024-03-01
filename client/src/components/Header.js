@@ -10,7 +10,7 @@ import "../assets/style/css/main/header.sass";
 // Functional component for rendering the header.
 function Header(props) {
   // Returning a header element with className and children props.
-  return <header className={props.className}>{props.children}</header>;
+  return <header className={props.className} />;
 }
 
 // Assigning PropTypes to the Header component.

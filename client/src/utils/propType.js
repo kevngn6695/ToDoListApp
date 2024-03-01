@@ -33,7 +33,6 @@ export const CustomDisplayContainerProps = {
 // PropTypes for the CustomEditModal component
 export const CustomEditModalProps = {
   className: PropTypes.string.isRequired, // CSS class name for styling
-  classNameContainer: PropTypes.string.isRequired, // CSS class name for modal container
   classNameDescriptionContainer: PropTypes.string.isRequired, // CSS class name for description container
   classNameModal: PropTypes.string.isRequired, // CSS class name for modal
   setModalOpen: PropTypes.func.isRequired, // Function to control the modal open state
