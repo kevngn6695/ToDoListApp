@@ -4,6 +4,8 @@ import "../assets/style/css/components/customdeletebin.sass";
 // Importing React for JSX syntax and basic functionality, and useState hook for managing component state.
 import React, { useState } from "react";
 
+import { handleDeleteItem } from "../utils/fetch";
+
 // Importing PropTypes for defining the type of props.
 import { CustomDeleteBinProps } from "../utils/proptype";
 
@@ -15,18 +17,6 @@ function CustomDeleteBin(props) {
   // State variables for managing todos and draggable state.
   const [todos, setTodo] = useState([]);
   const [isDraggable, setIsDraggable] = useState(false);
-
-  // Function to delete an item from todos.
-  const handelDeleteItem = async (id) => {
-    try {
-      await fetch(`http://localhost:5000/todos/${id}`, {
-        method: "DELETE",
-      });
-      setTodo(todos.filter((todo) => todo.id !== id));
-    } catch (err) {
-      console.error(err.message);
-    }
-  };
 
   // Functions for handling drag and drop events.
   const handleDragOver = (e) => {
@@ -41,7 +31,7 @@ function CustomDeleteBin(props) {
   const handleDragDrop = (e) => {
     e.preventDefault();
     const id = e.dataTransfer.getData("text/plain");
-    handelDeleteItem(id);
+    handleDeleteItem(id, todos, setTodo);
     setIsDraggable(false);
   };
 

@@ -34,7 +34,13 @@ function CustomTextDisplay(props) {
 
   useEffect(() => {
     const id = setInterval(() => {
-      getTodo(setTodo);
+      getTodo(setTodo)
+        .then((message) => {
+          console.log(`Successfully Resolved: ${message}`);
+        })
+        .catch((error) => {
+          console.error(`Error: ${error.message}`);
+        });
     }, 1000);
 
     document.addEventListener("click", handleOutsideClick);
