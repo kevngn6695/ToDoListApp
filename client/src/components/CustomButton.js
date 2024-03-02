@@ -9,9 +9,28 @@ import "../assets/style/css/components/custombutton.sass";
 
 // Functional component for rendering a custom button.
 function CustomButton(props) {
+  let holdTime;
+
+  const handleMouseDown = () => {
+    holdTime = setTimeout(() => {
+      // props.setMenuVisibility(true);
+    }, 500);
+  };
+
+  const handleMouseUp = () => {
+    // clearTimeout(holdTime);
+    // console.log("Release");
+  };
+
   // Rendering a button element with the provided className and onClick event handler.
   return (
-    <button className={props.className} onClick={props.onClick} {...props}>
+    <button
+      className={props.className}
+      onClick={props.onClick}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
+      {...props}
+    >
       {props.children}
     </button>
   );

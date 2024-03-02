@@ -14,6 +14,7 @@ import CustomMainContainer from "./components/CustomMainContainer";
 import CustomMenuContainer from "./components/CustomMenuContainer";
 import CustomTextHeading from "./components/CustomTextHeading";
 import CustomDateAndTimeContainer from "./components/CustomDateAndTimeContainer";
+import CustomDeleteBin from "./components/CustomDeleteBin";
 
 // Import navigation pages
 import Home from "./pages/Home";
@@ -118,6 +119,13 @@ function App() {
             <Route path="/calendar" element={<Calendar />} />
             <Route path="/note" element={<Note />} />
           </Routes>
+          {/* Delete bin icon */}
+          <CustomDeleteBin
+            classNameWrapper={`to-do-delete-icon-wrapper ${
+              isMenuOpen ? "open" : "closed"
+            }`}
+            className="to-do-delete"
+          />
         </CustomMainContainer>
 
         <Footer

@@ -3,7 +3,6 @@ import React from "react";
 
 // Importing custom components for building the menu container.
 import CustomButton from "./CustomButton.js";
-import CustomDeleteBin from "./CustomDeleteBin.js";
 import CustomMenuSymbol from "./CustomMenuSymbol.js";
 import CustomTaskNav from "./CustomTaskNav.js";
 import CustomTextHeading from "./CustomTextHeading.js";
@@ -23,6 +22,7 @@ function CustomMenuContainer(props) {
     { url: "/upcomming", text: "upcomming" },
     { url: "/calendar", text: "calendar" },
     { url: "/note", text: "note" },
+    { url: "/history", text: "history" },
   ];
   // Rendering the menu container with conditional rendering based on isMenuOpen prop.
   return (
@@ -95,13 +95,6 @@ function CustomMenuContainer(props) {
             }`}
             children={`TYPES`}
             h6
-          />
-          {/* Delete bin icon */}
-          <CustomDeleteBin
-            classNameWrapper={`to-do-delete-icon-wrapper ${
-              props.isMenuOpen ? "open" : "closed"
-            }`}
-            className="to-do-delete"
           />
         </>
       )}
