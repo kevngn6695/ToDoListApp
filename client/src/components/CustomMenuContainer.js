@@ -1,5 +1,5 @@
 // Importing React for JSX syntax and basic functionality.
-import React from "react";
+import React, { useState } from "react";
 
 // Importing custom components for building the menu container.
 import CustomButton from "./CustomButton.js";
@@ -7,6 +7,7 @@ import CustomMenuSymbol from "./CustomMenuSymbol.js";
 import CustomTaskNav from "./CustomTaskNav.js";
 import CustomTextHeading from "./CustomTextHeading.js";
 import CustomTextInput from "./CustomTextInput.js";
+import CustomContextMenu from "./CustomContextMenu.js";
 
 // Importing the custom container styles from the CSS file.
 import "../assets/style/css/components/customcontainer.sass";
@@ -24,6 +25,12 @@ function CustomMenuContainer(props) {
     { url: "/note", text: "note" },
     { url: "/history", text: "history" },
   ];
+
+  const [showMenu, setShowMenu] = useState(false);
+
+  const handleShowMenu = () => {
+    setShowMenu(!showMenu);
+  };
   // Rendering the menu container with conditional rendering based on isMenuOpen prop.
   return (
     <div
@@ -88,13 +95,32 @@ function CustomMenuContainer(props) {
             }`}
             urlLink={urlLink}
           />
-          {/* Heading for tasks */}
+          {/* Heading for types */}
           <CustomTextHeading
             className={`to-do-menu-types-text-heading ${
               props.isMenuOpen ? "open" : "closed"
             }`}
             children={`TYPES`}
             h6
+          />
+          {/* <CustomButton className={`to-do-menu-add-type-button`}>
+            Add Type
+          </CustomButton> */}
+          {/* Heading for tasks */}
+          {/* <CustomTextHeading
+            className={`to-do-menu-tag-text-heading ${
+              props.isMenuOpen ? "open" : "closed"
+            }`}
+            children={`TAGS`}
+            h6
+          /> */}
+          <CustomContextMenu
+            className={`to-do-context-menu ${showMenu ? "open" : "closed"}`}
+            classNameBtn={`to-do-context-menu-btn ${
+              showMenu ? "open" : "closed"
+            }`}
+            classNameContextMenuContainer={`to-do-context-menu-container`}
+            onClick={handleShowMenu}
           />
         </>
       )}
