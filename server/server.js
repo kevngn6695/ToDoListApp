@@ -7,7 +7,7 @@ const axios = require("axios");
 const pool = require("../database/db");
 
 /* Set port number to connect server with client */
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 5000; // Port number 5000
 
 /* Initialize express js */
 const app = express();
