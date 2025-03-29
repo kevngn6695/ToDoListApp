@@ -120,12 +120,12 @@ function App() {
             <Route path="/note" element={<Note />} />
           </Routes>
           {/* Delete bin icon */}
-          <CustomDeleteBin
+          {/* <CustomDeleteBin
             classNameWrapper={`to-do-delete-icon-wrapper ${
               isMenuOpen ? "open" : "closed"
             }`}
             className="to-do-delete"
-          />
+          /> */}
         </CustomMainContainer>
 
         <Footer

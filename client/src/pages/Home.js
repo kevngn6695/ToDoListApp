@@ -13,6 +13,9 @@ import CustomDisplayContainer from "../components/CustomDisplayContainer";
 import CustomTextInput from "../components/CustomTextInput";
 import CustomTextDisplay from "../components/CustomTextDisplay";
 
+import Login from "../pages/Login";
+import Calendar from "./Calendar";
+
 function Home(props) {
   // Initialize weekday and time objects
   // const dayNames = ["Sun", "Mon", "Tues", "Wed", "Thur", "Fri", "Sat"];
@@ -82,7 +85,8 @@ function Home(props) {
 
   return (
     <>
-      <CustomDisplayContainer
+      <Calendar />
+      {/* <CustomDisplayContainer
         className={`to-do-display-container ${
           props.isMenuOpen ? "open" : "closed"
         }`}
@@ -107,7 +111,7 @@ function Home(props) {
           modalOpen={props.modalOpen}
           setModalOpen={props.setModalOpen}
         />
-      </CustomDisplayContainer>
+      </CustomDisplayContainer> */}
     </>
   );
 }
