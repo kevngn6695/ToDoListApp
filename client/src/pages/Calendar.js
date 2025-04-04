@@ -5,7 +5,7 @@ function Calendar(props) {
   return (
     <section className={props.className}>
       {/* Create a calendar timeline with date and time for review */}
-      <TimeLine />
+      <TimeLine className="gantt-timeline" />
     </section>
   );
 }

@@ -98,3 +98,16 @@ export const addMonths = (date, months) => {
   result.setMonth(result.getMonth() + months);
   return result;
 };
+
+// Helper functions
+export const getWeekStart = (date) => {
+  const d = new Date(date);
+  d.setDate(d.getDate() - d.getDay());
+  return d;
+};
+
+export const getWeekEnd = (date) => {
+  const d = new Date(date);
+  d.setDate(d.getDate() + (6 - d.getDay()));
+  return d;
+};
