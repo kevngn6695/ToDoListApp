@@ -225,7 +225,32 @@ function CustomTimeline(props) {
         <div className="timeline-view-controls-container">
           <div className="timeline-view-ctrl">
             <button className="timeline-prev-btn">prev</button>
-            <div className="timeline-view-mode"></div>
+            <div className="timeline-view-mode">
+              <button
+                className={`timeline-view-mode-btn ${
+                  viewMode === "day" ? "active" : ""
+                }`}
+                onClick={() => setViewMode("day")}
+              >
+                Day
+              </button>
+              <button
+                className={`timeline-view-mode-btn ${
+                  viewMode === "week" ? "active" : ""
+                }`}
+                onClick={() => setViewMode("week")}
+              >
+                Week
+              </button>
+              <button
+                className={`timeline-view-mode-btn ${
+                  viewMode === "month" ? "active" : ""
+                }`}
+                onClick={() => setViewMode("month")}
+              >
+                Month
+              </button>
+            </div>
             <button className="timeline-next-btn">next</button>
           </div>
         </div>
