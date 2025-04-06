@@ -261,8 +261,19 @@ function CustomTimeline(props) {
         {/* Month */}
 
         {/* Day and week columns */}
-
-        {/* Hour rows */}
+        <div className="timeline-header" ref={timelineRef}>
+          {generateTimelineDays().map((day, index) => (
+            <div
+              key={index}
+              className={`timeline-day-column ${
+                day.isCurrent ? "current" : ""
+              }`}
+              style={{ width: day.width }}
+            >
+              {day.label}
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
