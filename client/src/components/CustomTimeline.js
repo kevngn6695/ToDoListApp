@@ -223,7 +223,7 @@ function CustomTimeline(props) {
       <div>
         <div className="timeline-view-controls-container">
           <div className="timeline-view-ctrl">
-            <button className="timeline-prev-btn">prev</button>
+            <button className="to-do-timeline-prev-btn"></button>
             <div className="timeline-view-mode">
               <button
                 className={`timeline-view-mode-btn ${
