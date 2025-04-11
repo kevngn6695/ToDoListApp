@@ -85,8 +85,8 @@ function Home(props) {
 
   return (
     <>
-      <Calendar />
-      {/* <CustomDisplayContainer
+      {/* <Calendar /> */}
+      <CustomDisplayContainer
         className={`to-do-display-container ${
           props.isMenuOpen ? "open" : "closed"
         }`}
@@ -111,7 +111,7 @@ function Home(props) {
           modalOpen={props.modalOpen}
           setModalOpen={props.setModalOpen}
         />
-      </CustomDisplayContainer> */}
+      </CustomDisplayContainer>
     </>
   );
 }
