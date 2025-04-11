@@ -217,8 +217,7 @@ function CustomTimeline(props) {
 
   return (
     <section className={props.className}>
-      <div className="timeline-title-container">
-        <h2 className="timeline-title">Timeline</h2>
+      <div className="to-do-timeline-title-container">
         <h2 className="timeline-proj-title">Project X</h2>
       </div>
       <div>
