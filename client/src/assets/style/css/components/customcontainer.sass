@@ -44,6 +44,7 @@
 
 .to-do-text-display-container
     overflow-y: auto
+    min-height: clamp( 70%, 50vh, 90%)
 
 /* Text Display Container Styles: Defines styles for text display containers in open and closed states. */
 .to-do-text-display-container.closed 
@@ -66,7 +67,7 @@
 /* Menu Container Styles: Defines styles for the menu container element. */
 .to-do-menu-container 
     width: 20%
-    min-height: 425px
+    min-height: calc( 425px + 10%)
     top: 2.5%
     left: 2.5%
     
@@ -77,7 +78,7 @@
 /* Modal Container Styles: Defines styles for the modal container element. */
 .to-do-modal-container 
     width: 300px
-    min-height: 400px
+    height: clamp( 90%, 50vh, 90%)
     right: 5%
     top: 5%
     position: fixed
