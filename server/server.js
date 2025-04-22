@@ -21,9 +21,7 @@ app.use(bodyParser.json());
 /* Set a path between client and server */
 app.use(express.static(path.join(__dirname, "client/build")));
 
-/* Routes */
-
-/* CRUD Operators */
+/* Routes CRUD Operators */
 
 // CREATE
 app.post("/todos", async (req, res) => {
